@@ -18,8 +18,8 @@
   background-color: #2f5597;
 }
 .public_sure_cancel_cont {
-  width: 300px;
-  height: 100px;
+  /*width: 300px;*/
+  /*height: 100px;*/
 }
 .public_sure_cancel_cont .tip {
   font-size: 18px;
@@ -306,8 +306,8 @@
   transition: all .4s;
   margin: 0 7px;
   border-radius: 3px;
-  width: 70px;
-  height: 25px;
+  /*width: 70px;*/
+  /*height: 25px;*/
   line-height: 25px;
   background-color: #eb891b;
   color: #ffffff;

@@ -1,0 +1,70 @@
+<div class="dialog demoCt">
+    <h1>
+        弹出框设置
+    </h1>
+    <p>示例：</p>
+    <button ng-click="open()">打开弹窗</button>
+    <p>代码：</p>
+    <span>HTML</span>
+    <pre>
+        <code>
+             &lt;button ng-click="open()">打开弹窗&lt;/button>
+             &lt;script type="text/ng-template" id="dialog">
+                &lt;div class="public_sure_cancel_cont adduser">
+                    &lt;div class="tip">弹窗标题&lt;/div>
+                    &lt;div class="bullet_box">
+                        &lt;div class="form_group">
+                            具体内容
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="btn_container">
+                        &lt;button class="btn_cancel" ng-click="cancel()">取消&lt;/button>
+                        &lt;button class="btn_sure" ng-click="sure()">确定&lt;/button>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/script>
+        </code>
+    </pre>
+    <span>JS</span>
+    <pre>
+        <code>
+monitor.controller('dialogCtrl', function ($scope, $state, $stateParams, ngDialog , $interval) {
+    $scope.open = function () {
+        ngDialog.open({
+            template: 'dialog',
+            scope: $scope,
+            controller: ['$scope', '$interval', function ($scope, $interval) {
+                $scope.sure = function () {
+
+                }
+                $scope.close = function () {
+                    $scope.closeThisDialog();
+                };
+                $scope.cancel = function () {
+                    $scope.closeThisDialog();
+                };
+            }],
+            className: 'ngdialog-theme-default ngdialog-theme-custom',
+            // width: 300,
+            overlay: true
+        });
+    }
+
+})
+        </code>
+    </pre>
+</div>
+<script type="text/ng-template" id="dialog">
+    <div class="public_sure_cancel_cont adduser">
+        <div class="tip">弹窗标题</div>
+        <div class="bullet_box">
+            <div class="form_group">
+                具体内容
+            </div>
+        </div>
+        <div class="btn_container">
+            <button class="btn_cancel" ng-click="cancel()">取消</button>
+            <button class="btn_sure" ng-click="sure()">确定</button>
+        </div>
+    </div>
+</script>

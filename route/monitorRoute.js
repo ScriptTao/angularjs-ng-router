@@ -145,6 +145,128 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
                 }]
             }
         })
+        //页面绑定中间件数据
+        .state('autoBind', {
+            url: '/autoBind',
+            templateUrl: root + 'demo/autoBind/autoBind.html' + version,
+            controller: 'autoBindCtrl',
+            title: "autoBind",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "autoBind",
+                        files: [
+                            root + "demo/autoBind/autoBindCtrl.js" + version,
+                            root + "demo/demo.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
+        //按钮示例
+        .state('button', {
+            url: '/button',
+            templateUrl: root + 'demo/button/button.html' + version,
+            controller: 'buttonCtrl',
+            title: "button",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "button",
+                        files: [
+                            root + "demo/button/buttonCtrl.js" + version,
+                            root + "demo/demo.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
+        //按钮示例
+        .state('checkbox', {
+            url: '/checkbox',
+            templateUrl: root + 'demo/checkbox/checkbox.html' + version,
+            controller: 'checkboxCtrl',
+            title: "checkbox",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "checkbox",
+                        files: [
+                            root + "demo/checkbox/checkboxCtrl.js" + version,
+                            root + "demo/demo.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
+        .state('datePicker', {
+            url: '/datePicker',
+            templateUrl: root + 'demo/datePicker/datePicker.html' + version,
+            controller: 'datePickerCtrl',
+            title: "datePicker",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "datePicker",
+                        files: [
+                            root + "demo/datePicker/datePickerCtrl.js" + version,
+                            root + "demo/demo.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
+        .state('dialog', {
+            url: '/dialog',
+            templateUrl: root + 'demo/dialog/dialog.html' + version,
+            controller: 'dialogCtrl',
+            title: "dialog",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "dialog",
+                        files: [
+                            root + "demo/dialog/dialogCtrl.js" + version,
+                            root + "demo/demo.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
+        .state('divContainer', {
+            url: '/divContainer',
+            templateUrl: root + 'demo/divContainer/divContainer.html' + version,
+            controller: 'divContainerCtrl',
+            title: "divContainer",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "divContainer",
+                        files: [
+                            root + "demo/divContainer/divContainerCtrl.js" + version,
+                            root + "demo/demo.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
+        .state('input_select', {
+            url: '/input_select',
+            templateUrl: root + 'demo/input_select/input_select.html' + version,
+            controller: 'input_selectCtrl',
+            title: "input_select",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "input_select",
+                        files: [
+                            root + "demo/input_select/input_selectCtrl.js" + version,
+                            root + "demo/demo.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
     ;
 
 

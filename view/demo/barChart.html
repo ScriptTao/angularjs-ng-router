@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>柱状图功能演示</title>
+
+    <link rel="stylesheet" href="../../bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../DataTables/DataTables-1.10.16/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="../../highlight/styles/rainbow.css">
+    <link rel="stylesheet" href="../../css/ustb.css">
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>柱状图使用方法演示</h1>
+        <p class="lead">基于开源eCharts实现</p>
+    </div>
+
+    <h3>基本使用方法</h3>
+    <p>在html文档的header区域引入样式文件，在body底部引入javascript文件。请注意引入的文件路径</p>
+    <pre><code class="html">
+&lt;link rel="stylesheet" href="../../bootstrap-3.3.7/css/bootstrap.min.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="../../DataTables/datatables.css"&gt;
+&lt;link rel="stylesheet" href="../../highlight/styles/rainbow.css"&gt;
+&lt;link rel="stylesheet" href="../../css/ustb.css"&gt;
+
+&lt;script src="../../jquery-3.2.1/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="../../bootstrap-3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script src="../../highlight/highlight.pack.js"&gt;&lt;/script&gt;
+&lt;script src="../../echarts/echarts-3.8.0.js"&gt;&lt;/script&gt;
+&lt;script src="../../js/q.js""&gt;&lt;/script"&gt;
+&lt;script src="../../js/ustb.js"&gt;&lt;/script&gt;
+    </code></pre>
+
+    <p>创建用于展示图表的html容器，其样式大小按照html规范设置</p>
+    <pre><code> &lt;div id="chart" style="width: 600px;height:500px;"&gt;&lt;/div&gt;
+    </code></pre>
+
+    <p>绑定标签数据，展示图表</p>
+    <pre><code>
+$(document).ready(function(){
+    makeBar();
+});
+
+function makeBar() {
+    //
+    // ustb专用配置
+    // opts.ustb.xAxis 横坐标tag属性名称，如果没配置，则默认取第一个属性作为横坐标
+    // opts.ustb.tag     图表数据对应的tag名称
+    // opts.ustb.showLegend 是否显示图例
+    //
+    // 其余配置与echart配置一致，封装已经对设置进行了默认处理，只需要设置title即可
+    //
+    ustb.makeBar("#chart", {
+        "ustb": {
+            "tag": "F2Curve",
+            "showLegend": true
+        },
+        "title": {
+            "text": 'F2Curve曲线',
+            "subtext": '数据可以点击按钮修改',
+            "left": "auto"
+        },
+        "xAxis": {
+            "name": "属性A的值",
+            "nameLocation": "center",
+            "nameGap": 35
+        },
+        "yAxis": {
+            "name": "F2Curve数值",
+            "nameLocation": "center",
+            "nameGap": 35
+        }
+    });
+}
+    </code></pre>
+
+    <button id="btnGenrateData" class="btn btn-default">随机改变标签值</button>
+
+    <div id="chart" style="width:600px; height: 500px;"></div>
+</div>
+</body>
+
+<script src="../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="../../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../highlight/highlight.pack.js"></script>
+<script src="../../echarts/echarts-3.8.0.js"></script>
+<script src="../../js/q.js"></script>
+<script src="../../js/ustb.js"></script>
+
+<script language="JavaScript">
+    hljs.initHighlightingOnLoad();
+
+    $(document).ready(function(){
+        makeChart();
+
+        $("#btnGenrateData").click(function() {
+            generateCurveData();
+        });
+    });
+
+    function makeChart() {
+        //
+        // ustb专用配置
+        // opts.ustb.xAxis 横坐标标签，如果配置了xAxisTag，则此项无效
+        // opts.ustb.xAxisTag 横坐标数据标签
+        // opts.ustb.tag     图表数据对应的tag名称
+        //
+        ustb.makeBar("#chart", {
+            "ustb": {
+                "showLegend": true,
+                "xAxis": "A",
+                "tag": "F2Curve"
+            },
+            "title": {
+                "text": 'F2Curve曲线',
+                "subtext": '数据可以点击按钮修改',
+                "left": "auto"
+            },
+            "xAxis": {
+                "name": "属性A的值",
+                "nameLocation": "center",
+                "nameGap": 35
+            },
+            "yAxis": {
+                "name": "F2Curve数值",
+                "nameLocation": "center",
+                "nameGap": 35
+            }
+        });
+    }
+
+    function generateCurveData() {
+        var data = [];
+        var len = 10;
+        for (var i=0; i<len; i++) {
+            data.push({
+                "A": ustb.randomStr(3),
+                "B": ustb.randomFloat(),
+                "C": ustb.randomFloat(),
+                "D": ustb.randomFloat(),
+                "E": ustb.randomFloat(),
+                "F": ustb.randomFloat()
+            });
+        }
+
+        var tag = {
+            "name": "F2Curve",
+            "dataList": data
+        };
+
+        ustb.sendTag([ tag ]);
+    }
+</script>
+</html>

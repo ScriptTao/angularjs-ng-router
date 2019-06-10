@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面跳转功能演示</title>
+
+    <link rel="stylesheet" href="../../bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../highlight/styles/rainbow.css">
+    <link rel="stylesheet" href="../../jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../css/ustb.css">
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>页面跳转功能演示</h1>
+        <p class="lead">实现在子页面中跳转到其他页面的功能。跳转到的页面必须在主菜单中存在，否则调用跳转不会有任何效果</p>
+    </div>
+
+    <div class="well">
+        <button class="btn btn-primary">跳转到slider演示页面</button>
+    </div>
+
+
+    <h3>基本使用方法</h3>
+    <p>引入ustb.js文件，请注意正确的引用路径</p>
+    <pre><code class="html">
+    &lt;script src="../../js/ustb.js"&gt;&lt;/script&gt;
+    </code></pre>
+
+    <p>调用ustb.navigateTo方法跳转</p>
+    <p>请注意：跳转链接地址必须为相对根路径的绝对地址。不可以使用相对路径地址。
+        为获取绝对路径地址，需使用ustb.getContextPath()函数获取网站Context路径。
+        再由context路径和从/html开始的路径进行拼接。在下例中，ustb.getContextPath() 调用返回 /monitor
+    </p>
+    <pre><code>
+     $(document).ready(function () {
+            $("button").click(function(){
+            ustb.navigateTo(ustb.getContextPath() + "/html/support/demo/getUserInfo.html");
+        });
+     });
+    </code></pre>
+
+    <div style="height:300px;"></div>
+</div>
+</body>
+
+<script src="../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="../../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../../highlight/highlight.pack.js"></script>
+<script src="../../js/q.js"></script>
+<script src="../../js/ustb.js"></script>
+
+<script language="JavaScript">
+    hljs.initHighlightingOnLoad();
+
+    $(document).ready(function () {
+       $("button").click(function(){
+          ustb.navigateTo(ustb.getContextPath() + "/html/support/demo/getUserInfo.html");
+       });
+    });
+
+</script>
+</html>

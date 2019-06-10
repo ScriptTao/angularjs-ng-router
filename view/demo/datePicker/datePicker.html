@@ -1,0 +1,33 @@
+<div class="datePicker demoCt">
+    <h1>时间插件值读写</h1>
+    <p>示例：</p>
+
+    <input type="text" onchange="" ng-model="subdataTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:true});">
+    <br>
+    <button ng-click="getdate()">获取选中时间</button>
+
+    <button ng-click="setdate()">设置相应时间</button>
+    <p>代码</p>
+    <span>HTML</span>
+    <pre>
+        <code>
+            &lt;input type="text" onchange="" ng-model="subdataTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:true});"&gt;
+            &lt;button ng-click="getdate()">获取选中时间&lt;/button&gt;
+            &lt;button ng-click="setdate()">设置相应时间&lt;/button&gt;
+        </code>
+    </pre>
+    <span>JS</span>
+    <pre>
+        <code>
+            monitor.controller('datePickerCtrl', function ($scope, $state, $stateParams, ngDialog , $interval) {
+    $scope.subdataTime = '';
+    $scope.getdate = function () {
+        alert($scope.subdataTime);
+    }
+    $scope.setdate = function () {
+        $scope.subdataTime = '1919-06-11 15:32:54'
+    }
+})
+        </code>
+    </pre>
+</div>

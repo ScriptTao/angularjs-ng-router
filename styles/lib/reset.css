@@ -6,7 +6,7 @@ body,
 html {
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    /*overflow: hidden;*/
     /*background-color: #f5f5f5;*/
     background-color: #ffffff;
     font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, Verdana, sans-serif, "\5B8B\4F53";
@@ -187,5 +187,20 @@ strong, b {
 }
 
 .fl {
+    float: left;
+}
+.wid_ct{
+    overflow: hidden;
+}
+.wid_100{
+    width: 100%;
+    height: auto;
+}
+.wid_50{
+    width: 50%;
+    float: left;
+}
+.wid_33{
+    width: 33.3%;
     float: left;
 }

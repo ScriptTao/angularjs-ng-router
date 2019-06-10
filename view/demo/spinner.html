@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>spinner控件功能演示</title>
+
+    <link rel="stylesheet" href="../../bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../highlight/styles/rainbow.css">
+    <link rel="stylesheet" href="../../jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../css/ustb.css">
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>spinner功能演示</h1>
+        <p class="lead">实现spinner的功能，更多示例请参考 http://api.jqueryui.com/1.11/spinner/</p>
+    </div>
+
+    <div class="well">
+        <div>
+            <label for="spinner">选择一个值：</label>
+            <input id="spinner" name="value">
+        </div>
+        <div style="margin-top: 10px;">
+            <button class="btn btn-primary" id="getVal">获取值</button>
+            <button class="btn btn-primary" id="setVal">设置值为5</button>
+        </div>
+    </div>
+
+
+    <h3>基本使用方法</h3>
+    <p>在html文档的header区域引入样式文件，在body底部引入javascript文件。请注意引入的文件路径</p>
+    <pre><code class="html">
+&lt;link rel="stylesheet" href="../../bootstrap-3.3.7/css/bootstrap.min.css"&gt;
+&lt;link rel="stylesheet" href="../../jquery-ui-1.12.1/jquery-ui.min.css"&gt;
+&lt;link rel="stylesheet" href="../../css/ustb.css"&gt;
+
+&lt;script src="../../jquery-3.2.1/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="../../bootstrap-3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script src="../../jquery-ui-1.12.1/jquery-ui.min.js"&gt;&lt;/script&gt;
+&lt;script src="../../js/q.js""&gt;&lt;/script"&gt;
+&lt;script src="../../js/ustb.js"&gt;&lt;/script&gt;
+    </code></pre>
+
+    <p>使用input创建slider元素，并创建显示slider值的span</p>
+    <pre><code>
+    &lt;div class="well"&gt;
+        &lt;div&gt;
+            &lt;label for="spinner"&gt;选择一个值：&lt;/label&gt;
+            &lt;input id="spinner" name="value"&gt;
+        &lt;/div&gt;
+        &lt;div style="margin-top: 10px;"&gt;
+            &lt;button class="btn btn-primary" id="getVal"&gt;获取值&lt;/button&gt;
+            &lt;button class="btn btn-primary" id="setVal"&gt;设置值为5&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    </code></pre>
+
+    <p>在文档加载完毕后，创建spinner控件</p>
+    <pre><code>
+    $(document).ready(function () {
+        var spinner = $("#spinner").spinner({
+            min: 1,
+            max: 10,
+            step: 1,
+            start: 6
+        });
+
+        $("#getVal").click(function () {
+            alert($("#spinner").spinner("value"));
+        });
+
+        $("#setVal").click(function () {
+            $("#spinner").spinner("value", 5);
+        });
+    });
+    </code></pre>
+
+    <div style="height:300px;"></div>
+</div>
+</body>
+
+<script src="../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="../../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../../highlight/highlight.pack.js"></script>
+<script src="../../js/q.js"></script>
+<script src="../../js/ustb.js"></script>
+
+<script language="JavaScript">
+    hljs.initHighlightingOnLoad();
+
+    $(document).ready(function () {
+        var spinner = $("#spinner").spinner({
+            min: 1,
+            max: 10,
+            step: 1,
+            start: 6
+        });
+
+        $("#getVal").click(function () {
+            alert($("#spinner").spinner("value"));
+        });
+
+        $("#setVal").click(function () {
+            $("#spinner").spinner("value", 5);
+        });
+    });
+
+</script>
+</html>

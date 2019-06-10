@@ -1,6 +1,6 @@
 
-// const IP = 'http://127.0.0.1:8089/';
-const IP = 'http://172.20.10.2:8089/';
+const IP = 'http://127.0.0.1:8089/';
+// const IP = 'http://172.20.10.2:8089/';
 
 
 const MENU_LIST = [

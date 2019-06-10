@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动绑定数据功能演示</title>
+    <style>
+        .container{
+            width: 1100px;
+            margin: 0 auto;
+        }
+        pre{
+            display: block;
+            padding: 9.5px;
+            margin: 0 0 10px;
+            font-size: 13px;
+            line-height: 1.42857143;
+            color: #333;
+            word-break: break-all;
+            word-wrap: break-word;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        pre code{
+            display: block;
+            overflow-x: auto;
+            background: #474949;
+            color: #d1d9e1;
+            padding: 0 30px;
+            font-size: inherit;
+            white-space: pre-wrap;
+            border-radius: 0
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>自动数据绑定方法演示</h1>
+        <p class="lead">实现tag数据自动绑定。支持input，span, label, select等基本html组件。表格和图标的支持请参考表格和图标使用示例</p>
+    </div>
+
+    <h3>基本使用方法</h3>
+    <p>在html文档的header区域引入样式文件，在body底部引入javascript文件。请注意引入的文件路径</p>
+    <pre><code class="html">
+&lt;link rel="stylesheet" href="../../bootstrap-3.3.7/css/bootstrap.min.css"&gt;
+&lt;link rel="stylesheet" type="text/css" href="../../DataTables/datatables.css"&gt;
+&lt;link rel="stylesheet" href="../../highlight/styles/rainbow.css"&gt;
+&lt;link rel="stylesheet" href="../../css/ustb.css"&gt;
+
+&lt;script src="../../jquery-3.2.1/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="../../bootstrap-3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script src="../../highlight/highlight.pack.js"&gt;&lt;/script&gt;
+&lt;script src="../../echarts/echarts-3.8.0.js"&gt;&lt;/script&gt;
+&lt;script src="../../js/q.js""&gt;&lt;/script"&gt;
+&lt;script src="../../js/ustb.js"&gt;&lt;/script&gt;
+    </code></pre>
+
+    <p>在需要进行数据绑定的html组件上设置绑定tag</p>
+    <pre><code>
+        &lt;div class="form-horizontal"&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label class="col-sm-2 control-label"&gt;RM_SCAN.TotalPass&lt;/label&gt;
+                &lt;div class="col-sm-10"&gt;
+                    &lt;label data-tag="RM_SCAN.TotalPass"&gt;&lt;/label&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label class="col-sm-2 control-label"&gt;RM_SCAN.CoilNo&lt;/label&gt;
+                &lt;div class="col-sm-10"&gt;
+                    &lt;button class="btn btn-info" data-tag="RM_SCAN.CoilNo"&gt;&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label class="col-sm-2 control-label"&gt;RM_SCAN.R1Speed&lt;/label&gt;
+                &lt;div class="col-sm-10"&gt;
+                    &lt;input class="form-control" data-tag="RM_SCAN.R1Speed"/&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="form-group"&gt;
+                &lt;label class="col-sm-2 control-label"&gt;F1Curve&lt;/label&gt;
+                &lt;div class="col-sm-10"&gt;
+                    &lt;select class="form-control" data-tag="F1Curve"&gt;
+                        &lt;option value="a" style="display: none;"&gt;&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    </code></pre>
+
+    <p>绑定标签数据</p>
+    <pre><code>
+$(document).ready(function () {
+    $("select").change(function (evt) {
+        var $option = $(evt.target).find("option:selected");
+
+        // 可以通过 $option.data("item") 将完整的数据取出
+        alert("选中的数据：" + JSON.stringify($option.data("item")));
+    });
+
+    $("#btnBind").click(function() {
+        bindData();
+    });
+
+    // 取消绑定时，需要制定取消绑定的标签列表。如果不传入标签列表，则取消所有绑定
+    // 取消绑定后，可看到界面上对应的数据不再随着随机数据改变而改变
+    $("#btnUnBind").click(function() {
+        ustb.unbind(["RM_SCAN.R1Speed", "RM_SCAN.CoilNo"]);
+    });
+
+    $("#btnWatch").click(function() {
+        // 对于列表中的每一个数据，都会调用单独的result
+        ustb.watch(["RM_SCAN.R1Speed", "RM_SCAN.CoilNo", "F1Curve"], function(result) {
+            alert(JSON.stringify(result));
+        })
+    });
+
+    $("#btnUnWatch").click(function() {
+        // 需传入取消监控的标签列表，如果不传，则取消所有监控
+        ustb.unwatch(["RM_SCAN.R1Speed", "RM_SCAN.CoilNo", "F1Curve"]);
+    });
+
+    $("#btnPause").click(function() {
+        ustb.pausePolling();
+    });
+
+    $("#btnResume").click(function() {
+        ustb.resumePolling();
+    });
+
+    // 调用绑定
+    bindData();
+});
+
+function bindData() {
+    var opts = {
+        // 是否只绑定一次，如果要连续绑定，此处应当设置为false，如果只绑定一次，则设置为true
+        "once": false,
+
+        // 在绑定select控件时，指定绑定的属性值，默认为 Text 和 Value
+        "select": {
+            "textField": "Text",
+            "valueField": "Value"
+        }
+    };
+    ustb.bind(opts);
+}
+    </code></pre>
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">RM_SCAN.TotalPass</label>
+            <div class="col-sm-10">
+                <label data-tag="RM_SCAN.TotalPass"></label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">RM_SCAN.CoilNo</label>
+            <div class="col-sm-10">
+                <button class="btn btn-info" data-tag="RM_SCAN.CoilNo"></button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">RM_SCAN.R1Speed</label>
+            <div class="col-sm-10">
+                <input class="form-control" data-tag="RM_SCAN.R1Speed"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">F1Curve</label>
+            <div class="col-sm-10">
+                <select class="form-control" data-tag="F1Curve">
+                    <option value="a" style="display: none;"></option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <button id="btnGenrateData" class="btn btn-primary">随机改变数据</button>
+
+    <button id="btnBind" class="btn btn-primary">绑定</button>
+    <button id="btnUnBind" class="btn btn-primary">取消绑定</button>
+
+    <button id="btnWatch" class="btn btn-primary">监控</button>
+    <button id="btnUnWatch" class="btn btn-primary">取消监控</button>
+
+    <button id="btnPause" class="btn btn-primary">暂停绑定及监控</button>
+    <button id="btnResume" class="btn btn-primary">继续绑定及监控</button>
+
+    <div style="height:300px;"></div>
+</div>
+</body>
+
+
+<script language="JavaScript">
+    hljs.initHighlightingOnLoad();
+
+    $(document).ready(function () {
+        bindData();
+
+        $("select").change(function (evt) {
+            var $option = $(evt.target).find("option:selected");
+
+            // 可以通过 $option.data("item") 将完整的数据取出
+            alert("选中的数据：" + JSON.stringify($option.data("item")));
+        });
+
+        $("#btnGenrateData").click(function () {
+            generateData();
+        });
+
+        $("#btnBind").click(function() {
+            bindData();
+        });
+
+        // 取消绑定时，需要制定取消绑定的标签列表。如果不传入标签列表，则取消所有绑定
+        // 取消绑定后，可看到界面上对应的数据不再随着随机数据改变而改变
+        $("#btnUnBind").click(function() {
+           ustb.unbind(["RM_SCAN.R1Speed", "RM_SCAN.CoilNo"]);
+        });
+
+        $("#btnWatch").click(function() {
+            // 对于列表中的每一个数据，都会调用单独的result
+            ustb.watch(["RM_SCAN.R1Speed", "RM_SCAN.CoilNo", "F1Curve"], function(result) {
+                alert(JSON.stringify(result));
+            })
+        });
+
+        $("#btnUnWatch").click(function() {
+            // 需传入取消监控的标签列表，如果不传，则取消所有监控
+            ustb.unwatch(["RM_SCAN.R1Speed", "RM_SCAN.CoilNo", "F1Curve"]);
+        });
+
+
+        $("#btnPause").click(function() {
+            ustb.pausePolling();
+        });
+
+        $("#btnResume").click(function() {
+           ustb.resumePolling();
+        });
+    });
+
+    function bindData() {
+        var opts = {
+            "once": false,
+            "select": {
+                "textField": "Text",
+                "valueField": "Value"
+            }
+        };
+        ustb.bind(opts);
+    }
+
+    function generateData() {
+        var tags = [
+            {
+                "name": "RECStretchParamF1",
+                "value": ustb.randomStr(5)
+            },
+            {
+                "name": "RM_SCAN.CoilNo",
+                "value": ustb.randomStr(5)
+            },
+            {
+                "name": "RM_SCAN.TotalPass",
+                "value": ustb.randomInt()
+            },
+            {
+                "name": "RM_SCAN.R1Speed",
+                "value": ustb.randomFloat()
+            }
+        ];
+
+        var dataList = [];
+        var len = Math.floor(Math.random() * 5) + 1;
+        for (var i = 0; i < len; i++) {
+            dataList.push({
+                "Text": ustb.randomStr(5),
+                "Value": ustb.randomInt()
+            });
+        }
+
+        tags.push({
+            "name": "F1Curve",
+            "dataList": dataList
+        });
+
+        ustb.sendTag(tags, function (response) {
+            console.log(response);
+        });
+    }
+</script>
+</html>

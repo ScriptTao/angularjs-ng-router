@@ -1,0 +1,46 @@
+<div class="input_select demoCt">
+    <h1>input/select读取对应值</h1>
+    <p>示例</p>
+    <input type="text" ng-model="params.inp">
+    <select ng-model="params.sle">
+        <option value="选择1">选择1</option>
+        <option value="选择2">选择2</option>
+    </select>
+    <br>
+        <b>{{params.inp}}/{{params.sle}}</b>
+    <br>
+    <button ng-click="get()">获取值</button>
+    <button ng-click="set()">设置值</button>
+    <p>代码</p>
+    <span>HTML</span>
+    <pre>
+        <code>
+            &lt;input type="text" ng-model="params.inp">
+            &lt;select ng-model="params.sle">
+                &lt;option value="选择1">选择1&lt;/option>
+                &lt;option value="选择2">选择2&lt;/option>
+            &lt;/select>
+                &lt;b>{{params.inp}}/{{params.sle}}&lt;/b>
+            &lt;button ng-click="get()">获取值&lt;/button>
+            &lt;button ng-click="set()">设置值&lt;/button>
+        </code>
+    </pre>
+    <span>JS</span>
+    <pre>
+        <code>
+            monitor.controller('input_selectCtrl', function ($scope, $state, $stateParams, ngDialog , $interval) {
+                $scope.params = {
+                    inp:"first",
+                    sle:"选择2"
+                }
+                $scope.get = function () {
+                    alert(''+$scope.params.inp+','+$scope.params.sle+'')
+                }
+                $scope.set = function () {
+                    $scope.params.inp="test";
+                    $scope.params.sle="选择1";
+                }
+            })
+        </code>
+    </pre>
+</div>

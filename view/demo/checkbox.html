@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单选框</title>
+
+    <link rel="stylesheet" href="../../bootstrap-3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../highlight/styles/rainbow.css">
+    <link rel="stylesheet" href="../../jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../css/ustb.css">
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>单选框</h1>
+        <p class="lead">单选框功能演示</p>
+    </div>
+
+    <div class="well">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="checkbox1">
+                选项1
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="checkbox2">
+                选项2
+            </label>
+        </div>
+        <div class="checkbox disabled">
+            <label>
+                <input type="checkbox" value="checkbox3" disabled>
+                选项3已经被禁用
+            </label>
+        </div>
+
+        <div style="margin-top:20px;">
+            <button id="getText" class="btn btn-default">获取选中项</button>
+            <button id="setText" class="btn btn-default">设置选中项</button>
+        </div>
+    </div>
+
+    <p>
+        单选框使用input标签实现，type设置为checkbox
+    </p>
+    <pre><code>
+    &lt;div class="checkbox"&gt;
+        &lt;label&gt;
+            &lt;input type="checkbox" value="checkbox1"&gt;
+            选项1
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="checkbox"&gt;
+        &lt;label&gt;
+            &lt;input type="checkbox" value="checkbox2"&gt;
+            选项2
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="checkbox disabled"&gt;
+        &lt;label&gt;
+            &lt;input type="checkbox" value="checkbox3" disabled&gt;
+            选项3已经被禁用
+        &lt;/label&gt;
+    &lt;/div&gt;
+    </code></pre>
+
+    <p>
+        Javascript方法如下：
+    </p>
+    <pre><code>
+    $(document).ready(function () {
+        $("#getText").click(function() {
+            var text = "";
+            $("input[type='checkbox']:checked").each(function(index, elem) {
+                text += $(elem).val() + ", "
+            });
+            alert(text);
+        });
+
+        $("#setText").click(function() {
+            $("input[type='checkbox'][value='checkbox2']").prop("checked", true);
+        });
+    });
+    </code></pre>
+    <div style="height:300px;"></div>
+</div>
+</body>
+
+<script src="../../jquery-3.2.1/jquery-3.2.1.min.js"></script>
+<script src="../../bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="../../highlight/highlight.pack.js"></script>
+<script src="../../js/q.js"></script>
+<script src="../../js/ustb.js"></script>
+
+<script language="JavaScript">
+    hljs.initHighlightingOnLoad();
+
+    $(document).ready(function () {
+        $("#getText").click(function() {
+            var text = "";
+            $("input[type='checkbox']:checked").each(function(index, elem) {
+                text += $(elem).val() + ", "
+            });
+            alert(text);
+        });
+
+        $("#setText").click(function() {
+            $("input[type='checkbox'][value='checkbox2']").prop("checked", true);
+        });
+    });
+
+</script>
+</html>
