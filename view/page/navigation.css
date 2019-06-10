@@ -1,0 +1,265 @@
+.navigation {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #f5f5f5;
+}
+.navigation .navgition_top {
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+}
+.navigation .navgition_top .title {
+  text-align: center;
+  width: 100%;
+  height: 22px;
+  line-height: 22px;
+  letter-spacing: 3px;
+  font-size: 13px;
+  background-color: #eb891b;
+  color: #ffffff;
+}
+.navigation .navgition_top .top_nav {
+  height: 30px;
+  line-height: 28px;
+  overflow: hidden;
+  position: relative;
+}
+.navigation .navgition_top .top_nav > div {
+  float: left;
+}
+.navigation .navgition_top .top_nav .now_time {
+  width: 190px;
+  height: 100%;
+  font-size: 14px;
+  text-align: center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background-color: #ffffff;
+}
+.navigation .navgition_top .top_nav .nav_list {
+  width: 100%;
+  padding-left: 190px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.navigation .navgition_top .top_nav .nav_list .close_fl {
+  text-align: center;
+  width: 26px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 190px;
+  cursor: pointer;
+  background-color: #eb891b;
+  color: #ffffff;
+}
+.navigation .navgition_top .top_nav .nav_list .nav_list_ul {
+  width: 100%;
+  padding-left: 26px;
+  padding-right: 170px;
+  overflow: hidden;
+  background-color: #ffffff;
+  color: #333333;
+}
+.navigation .navgition_top .top_nav .nav_list .nav_list_ul li {
+  height: 100%;
+  cursor: pointer;
+  float: left;
+  width: 120px;
+  text-align: center;
+  position: relative;
+}
+.navigation .navgition_top .top_nav .nav_list .nav_list_ul li i {
+  padding-right: 5px;
+}
+.navigation .navgition_top .top_nav .nav_list .nav_list_ul .check_one_sty {
+  border-bottom: 2px solid #eb891b;
+}
+.navigation .navgition_top .top_nav .nav_list .login_info {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 170px;
+  background-color: #ffffff;
+  color: #333333;
+}
+.navigation .navgition_top .top_nav .nav_list .login_info ul li {
+  cursor: pointer;
+  float: left;
+  padding-right: 20px;
+}
+.navigation .navgition_top .top_nav .nav_list .login_info ul li i {
+  font-size: 14px;
+  vertical-align: middle;
+  padding-bottom: 1px;
+}
+.navigation .navgition_top .top_nav .nav_list .team_info {
+  position: fixed;
+  top: 62px;
+  right: 30px;
+  background-color: #ffffff;
+  color: #333333;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  opacity: 0.9;
+}
+.navigation .navgition_top .top_nav .nav_list .team_info p {
+  height: 30px;
+  line-height: 30px;
+  background-color: #eb891b;
+  color: #ffffff;
+  text-align: center;
+}
+.navigation .navgition_top .top_nav .nav_list .team_info ul {
+  width: 100%;
+}
+.navigation .navgition_top .top_nav .nav_list .team_info ul li {
+  width: 100%;
+  padding: 3px 16px;
+  background-color: #ffffff;
+  color: #333333;
+  border-bottom: 1px dashed #e5e5e5;
+}
+.navigation .navgition_top .top_nav .nav_list .team_info .triangle {
+  position: absolute;
+  left: 50px;
+  top: -9px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 8px solid #ffffff;
+}
+.navigation .navigation_left {
+  transition: All 2s ease-in-out;
+  position: absolute;
+  width: 190px;
+  top: 0px;
+  padding-top: 52px;
+  left: 0px;
+  min-height: 100%;
+  background-color: #59646fad;
+  color: #ffffff;
+}
+.navigation .navigation_left .left_nav {
+  width: 100%;
+  height: 100%;
+}
+.navigation .navigation_left .left_nav .user_info {
+  margin: 20px auto;
+}
+.navigation .navigation_left .left_nav .user_info img {
+  display: block;
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
+}
+.navigation .navigation_left .left_nav .user_info span {
+  display: inline-block;
+  text-align: center;
+  font-size: 13px;
+  color: #ffffff;
+  width: 100%;
+  margin-top: 15px;
+}
+.navigation .navigation_left .left_nav .nav_list {
+  width: 100%;
+  font-size: 13px;
+  cursor: pointer;
+}
+.navigation .navigation_left .left_nav .nav_list > ul {
+  width: 100%;
+}
+.navigation .navigation_left .left_nav .nav_list > ul > li {
+  line-height: 40px;
+  text-align: left;
+  position: relative;
+  padding: 0px 0px 0px 20px;
+  text-align: center;
+}
+.navigation .navigation_left .left_nav .nav_list > ul > li .two_b {
+  width: 100%;
+  padding-right: 60px;
+  /*&:hover {
+                .bgc_4e5465();
+                e {
+                  display: block;
+                  width: 3px;
+                  height: 40px;
+                  position: absolute;
+                  top: 0px;
+                  left: 0px;
+                  background-color: #00F7DE;
+                }
+              }*/
+}
+.navigation .navigation_left .left_nav .nav_list > ul > li .two_b i {
+  padding-right: 5px;
+}
+.navigation .navigation_left .left_nav .nav_list > ul > li > ul li {
+  margin: 5px 0 5px 5px;
+}
+.navigation .navigation_left .left_nav .nav_list > ul > li > ul li span {
+  padding-left: 60px;
+}
+.navigation .navigation_left .left_nav .nav_list > ul .check_two_sty {
+  border-bottom: 2px solid #eb891b;
+}
+.navigation .navigation_left .left_nav .bk_info {
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+}
+.navigation .navigation_left .left_nav .bk_info img {
+  display: block;
+  width: 50%;
+  height: auto;
+  margin: 10px auto;
+}
+.navigation .navigation_left .left_nav .bk_info span {
+  text-align: center;
+  padding-left: 10px;
+  font-size: 13px;
+  color: #ffffff;
+  width: 100%;
+  margin-top: 420px;
+}
+.navigation .navigation_left_switch_hide {
+  opacity: 0;
+  left: -190px;
+}
+.navigation .navigation_left_switch_show {
+  opacity: 1;
+  left: 0px;
+}
+.navigation #ui_view {
+  width: 100%;
+  padding: 52px 0 0 190px;
+  transition: All 2s ease-in-out;
+  background-color: #f5f5f5;
+}
+.navigation .ui_view_show {
+  padding-left: 190px !important;
+}
+.navigation .ui_view_hide {
+  padding-left: 0 !important;
+}
+.navigation .footer {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  margin-left: -140px;
+  margin-top: 8px;
+  text-align: center;
+  color: #757575;
+  font-size: 14px;
+  font-family: arial, "Hiragino Sans GB", "Microsoft YaHei", "微軟正黑體", "儷黑 Pro", sans-serif;
+  padding-bottom: 10px;
+}

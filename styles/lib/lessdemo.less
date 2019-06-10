@@ -1,0 +1,16 @@
+//1.less中的变量
+@color:#cccccc;
+.wrap{
+  width: 100px;
+  height: 200px;
+  margin: 100px auto;
+  background-color: @color;
+  @wid:40px;
+  &:hover{
+    background-color: pink;
+  }
+  .inner{
+    width: @wid;
+    height: 30px;
+  }
+}

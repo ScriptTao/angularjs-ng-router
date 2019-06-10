@@ -1,0 +1,646 @@
+@-webkit-keyframes ngdialog-fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes ngdialog-fadeout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes ngdialog-fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes ngdialog-fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.ngdialog {
+    box-sizing: border-box;
+}
+
+.ngdialog *,
+.ngdialog *:before,
+.ngdialog *:after {
+    box-sizing: inherit;
+}
+
+.ngdialog {
+    position: fixed;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 10000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.ngdialog.ngdialog-disabled-animation,
+.ngdialog.ngdialog-disabled-animation .ngdialog-overlay,
+.ngdialog.ngdialog-disabled-animation .ngdialog-content {
+    -webkit-animation: none !important;
+    animation: none !important;
+}
+
+.ngdialog-overlay {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-animation: ngdialog-fadein 0.5s;
+    animation: ngdialog-fadein 0.5s;
+}
+
+.ngdialog-no-overlay {
+    pointer-events: none;
+}
+
+.ngdialog.ngdialog-closing .ngdialog-overlay {
+    -webkit-backface-visibility: hidden;
+    -webkit-animation: ngdialog-fadeout 0.5s;
+    animation: ngdialog-fadeout 0.5s;
+}
+
+.ngdialog-content {
+    background: white;
+    -webkit-backface-visibility: hidden;
+    -webkit-animation: ngdialog-fadein 0.5s;
+    animation: ngdialog-fadein 0.5s;
+    pointer-events: all;
+}
+
+.ngdialog.ngdialog-closing .ngdialog-content {
+    -webkit-backface-visibility: hidden;
+    -webkit-animation: ngdialog-fadeout 0.5s;
+    animation: ngdialog-fadeout 0.5s;
+}
+
+.ngdialog-close:before {
+    font-family: 'Helvetica', Arial, sans-serif;
+    content: '\00D7';
+    cursor: pointer;
+}
+
+html.ngdialog-open,
+body.ngdialog-open {
+    overflow: hidden;
+}
+
+.ngdialog.ngdialog-theme-error {
+    padding-top: 50%;
+    padding-left: 50%;
+}
+
+.ngdialog.ngdialog-theme-error .ngdialog-content {
+    text-align: center;
+    line-height: 6vh;
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    border-radius: 1vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 0 3vw;
+}
+
+.ngdialog.ngdialog-theme-error .ngdialog-close {
+    display: none;
+}
+
+
+.ngdialog.ngdialog-theme-invoiceType {
+    padding-top: 50%;
+    padding-left: 50%;
+}
+
+.ngdialog.ngdialog-theme-invoiceType .ngdialog-content {
+    background: #ffffff;
+    border-radius: 1vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 7.4rem;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.ngdialog.ngdialog-theme-invoiceType .ngdialog-close {
+    display: none;
+}
+
+
+.ngdialog.ngdialog-success-teaching {
+    padding-top: 50%;
+    padding-left: 50%;
+}
+
+.ngdialog.ngdialog-success-teaching .ngdialog-content {
+    background: #ffffff;
+    border-radius: 1vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 7.9rem;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.ngdialog.ngdialog-success-teaching .ngdialog-close {
+    display: none;
+}
+
+
+
+.ngdialog.ngdialog-theme-img {
+    padding-top: 50%;
+    padding-left: 50%;
+}
+
+.ngdialog.ngdialog-theme-img .ngdialog-content {
+    width: 66vw;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.ngdialog.ngdialog-theme-img .ngdialog-content>img {
+    width: 100%;
+    display: block;
+}
+
+.ngdialog.ngdialog-theme-img .ngdialog-close {
+    display: none;
+}
+
+
+
+.ngdialog.ngdialog-theme-confirm {
+    padding-top: 50%;
+    padding-left: 50%;
+}
+
+.ngdialog.ngdialog-theme-confirm .ngdialog-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 6.56rem;
+    height: 3.173rem;
+    background-color: #ffffff;
+    box-shadow: 0rem 0.053rem 0.16rem 0rem rgba(44, 185, 244, 0.6);
+    border-radius: 0.24rem;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.ngdialog.ngdialog-theme-confirm .ngdialog-content .ngdialogContent {
+    text-align: center;
+    height: 2.187rem;
+    line-height: 2.187rem;
+}
+
+.ngdialog.ngdialog-theme-confirm .ngdialog-content .ngdialogContent>span {
+    font-size: 0.48rem;
+    color: #666666;
+}
+
+.ngdialog.ngdialog-theme-confirm .ngdialog-content .ngdialogBottom {
+    width: 6.56rem;
+    height: 0.987rem;
+    background-color: #dddddd;
+}
+
+.ngdialog.ngdialog-theme-confirm .ngdialog-content .ngdialogBottom button {
+    width: 49%;
+    height: 0.987rem;
+    font-size: 0.4rem;
+    color: #ffffff;
+    border: none;
+}
+
+.ngdialog.ngdialog-theme-confirm .ngdialog-content .ngdialogBottom button:last-of-type {
+    background-image: linear-gradient(45deg,
+        #65ceff 0%,
+        #66d8f9 100%);
+    float: right;
+}
+
+.ngdialog.ngdialog-theme-confirm .ngdialog-close {
+    display: none;
+}
+
+.ngdialog.ngdialog-theme-cityPicker {}
+
+.ngdialog.ngdialog-theme-cityPicker .ngdialog-content {
+    position: fixed;
+    bottom: 0;
+    height: 60vh;
+    width: 100%;
+    border-radius: 0.2rem 0.2rem 0 0;
+}
+
+.ngdialog.ngdialog-theme-cityPicker .ngdialog-close {}
+
+.ngdialog.ngdialog-theme-beautifulError {
+    padding-top: 50%;
+    padding-left: 50%;
+}
+
+.ngdialog.ngdialog-theme-beautifulError .ngdialog-content {
+    width: 7.9rem;
+    background: #fff;
+    box-shadow: 0rem 0.1rem 0.2rem 0rem rgba(182, 182, 182, 0.7);
+    text-align: center;
+    border-radius: 0.1rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.ngdialog.ngdialog-theme-beautifulError .ngdialog-content .beautifulErrorBox {}
+
+.ngdialog.ngdialog-theme-beautifulError .ngdialog-content .beautifulErrorBox .beautifulErrorBoxTop {
+    margin-top: -2rem;
+}
+
+.ngdialog.ngdialog-theme-beautifulError .ngdialog-content .beautifulErrorBox .beautifulErrorBoxTop>img {
+    height: 3.3rem;
+}
+
+.ngdialog.ngdialog-theme-beautifulError .ngdialog-content .beautifulErrorBox .beautifulErrorBoxContent {
+    width: 6.1rem;
+    display: block;
+    margin: 0.48rem auto 0;
+}
+
+.ngdialog.ngdialog-theme-beautifulError .ngdialog-content .beautifulErrorBox .beautifulErrorBoxContent>span {
+    font-size: 0.4rem;
+    color: #333;
+}
+
+.ngdialog.ngdialog-theme-beautifulError .ngdialog-close {
+    margin: 0.573rem auto 0.373rem auto;
+    width: 6.9rem;
+    height: 1.2rem;
+    background-color: #6488d4;
+    box-shadow: 0rem 0.1rem 0.2rem 0rem rgba(100, 136, 212, 0.35);
+    border-radius: 0.1rem;
+    font-size: 0.5rem;
+    color: #fff;
+}
+
+.ngdialog-close:before {
+    content: '确认';
+    cursor: pointer;
+    line-height: 1.2rem;
+}
+
+.ngdialog.ngdialog-theme-tip {
+    padding-top: 50%;
+    padding-left: 50%;
+}
+
+.ngdialog.ngdialog-theme-tip .ngdialog-content {
+    width: 6.88rem;
+    /* height: 8.107rem; */
+    text-align: center;
+    color: #555555;
+    font-size: 0.373rem;
+    background: #fff;
+    border-radius: 0.133rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.ngdialog.ngdialog-theme-tip .ngdialog-close {
+    position: absolute;
+    top: -0.84rem;
+    right: 0;
+    width: 0.533rem;
+    height: 0.533rem;
+    background: url('http://file.xinxuewen.cn/teacherFront/courseInfo/file-1537082036826.png');
+    background-size: contain;
+}
+
+.ngdialog.ngdialog-theme-tip .tipBox {
+    line-height: 1;
+}
+
+.ngdialog.ngdialog-theme-tip .tipBox .tipBoxTop {
+    font-size: 0.427rem;
+    color: #333;
+    margin: 0.427rem auto;
+}
+
+.ngdialog.ngdialog-theme-tip .tipBox>hr {
+    border: none;
+    background: #e8e8e8;
+    height: 1px;
+}
+
+.ngdialog.ngdialog-theme-tip .tipBox .tipBoxContent {}
+
+.ngdialog.ngdialog-theme-tip .tipBox .tipBoxContent>p {
+    /* width: 5.63rem; */
+    text-align: left;
+    margin: 0 0 0 0.587rem;
+}
+
+.ngdialog.ngdialog-theme-tip .tipBox .tipBoxContent>p>span {
+    font-size: 0.427rem;
+    color: #666;
+    float: left;
+    display: block;
+    height: 0.413rem;
+    margin-top: 0.253rem;
+}
+
+.ngdialog.ngdialog-theme-tip .tipBox .tipBoxBottom {
+    margin: 0.547rem auto;
+}
+
+.ngdialog.ngdialog-theme-tip .tipBox .tipBoxBottom>button {
+    width: 4.747rem;
+    height: 1.067rem;
+    background-color: #6488d4;
+    box-shadow: 0rem 0.067rem 0.24rem 0rem rgba(100, 136, 212, 0.35);
+    font-size: 0.48rem;
+    color: #fff;
+    border-radius: 0.533rem;
+}
+
+.ngdialog.ngdialog-theme-tip .ngdialog-close:before {
+    content: '';
+}
+
+
+
+
+
+
+
+
+.ngdialog-theme-courseConfirm {
+    padding-top: 50%;
+    padding-left: 50%;
+}
+
+.ngdialog-theme-courseConfirm .ngdialog-content {
+    width: 7.307rem;
+    text-align: center;
+    background: #fff;
+    border-radius: 0.133rem;
+    box-shadow: 0rem 0.067rem 0.24rem 0rem rgba(182, 182, 182, 0.7);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.ngdialog-theme-courseConfirm .ngdialog-close {
+    position: absolute;
+    top: -0.84rem;
+    right: 0;
+    width: 0.533rem;
+    height: 0.533rem;
+    background: url('http://file.xinxuewen.cn/teacherFront/courseInfo/file-1537082036826.png');
+    background-size: contain;
+}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm {}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm>hr {
+    height: 0.107rem;
+    background-color: #fafafa;
+    border: none;
+    margin-top: 0.36rem;
+}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm .subscribeCourseConfirmTop {}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm .subscribeCourseConfirmTop>img {
+    width: 2.053rem;
+    height: 2.053rem;
+    border-radius: 50%;
+    margin: -1.027rem auto 0 auto;
+    display: block;
+    box-shadow: 0rem 0.24rem 0.288rem 0.005rem rgba(100, 136, 212, 0.38);
+}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm .subscribeCourseConfirmTop>span {
+    font-size: 0.427rem;
+    color: #6488d4;
+    margin-top: 0.36rem;
+    display: block;
+}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm .subscribeCourseConfirmContent {
+    margin-top: 0.26rem;
+}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm .subscribeCourseConfirmContent>span {
+    font-size: 0.427rem;
+    color: #333;
+}
+
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm .subscribeCourseConfirmContent>ul {
+    text-align: left;
+    padding: 0 0.747rem;
+    margin-top: 0.227rem;
+}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm .subscribeCourseConfirmContent>ul>li {
+    border-bottom: 1px solid #f6f6f6;
+    line-height: 2;
+}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm .subscribeCourseConfirmContent>ul>li>span {
+    width: 1.233rem;
+    color: #999;
+    display: block;
+    float: left;
+    height: 0.66rem;
+}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm .subscribeCourseConfirmContent>ul>li>b {
+    font-weight: normal;
+    color: #666;
+    font-size: 0.32rem;
+    margin-right: 0.1rem;
+}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm .subscribeCourseConfirmBottom {
+    margin-top: 0.6rem;
+}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm .subscribeCourseConfirmBottom>button {
+    width: 4.747rem;
+    height: 1.067rem;
+    background: #6488d4;
+    box-shadow: 0rem 0.067rem 0.24rem 0rem rgba(100, 136, 212, 0.35);
+    border-radius: 0.533rem;
+    font-size: 0.427rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.ngdialog-theme-courseConfirm .subscribeCourseConfirm .subscribeCourseConfirmBottom>p {
+    font-size: 0.32rem;
+    color: #999;
+    margin: 0.427rem auto;
+}
+
+.ngdialog-theme-courseConfirm .ngdialog-close:before {
+    content: '';
+}
+
+.ngdialog.ngdialog-theme-secondaryConfirmation {
+    padding-top: 50%;
+    padding-left: 50%;
+}
+
+.ngdialog.ngdialog-theme-secondaryConfirmation .ngdialog-content {
+    text-align: center;
+    line-height: 6vh;
+    background: #fff;
+    border-radius: 0.32rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 0 3vw;
+}
+
+.ngdialog.ngdialog-theme-secondaryConfirmation .ngdialog-content .secondaryConfirmationBox {
+    width: 7.467rem;
+    height: 1.733rem;
+}
+
+.ngdialog.ngdialog-theme-secondaryConfirmation .ngdialog-content .secondaryConfirmationBox>span {
+    font-size: 0.427rem;
+    color: #000;
+    margin: 1.24rem 0 0 0;
+    display: block;
+}
+
+.ngdialog.ngdialog-theme-secondaryConfirmation .ngdialog-close {
+    margin: 0.573rem auto 0.987rem;
+    width: 2.4rem;
+    height: 0.8rem;
+    background: #fa5956;
+    box-shadow: 0rem 0.1rem 0.2rem 0rem rgba(100, 136, 212, 0.35);
+    font-size: 0.5rem;
+    border-radius: 0.587rem;
+    color: #fff;
+}
+
+.ngdialog-close:before {
+    content: '确认';
+    cursor: pointer;
+    line-height: 0.9rem;
+    display: block;
+}
+
+.ngdialog.ngdialog-theme-selectBox {
+    padding-top: 50%;
+    padding-left: 50%;
+}
+
+.ngdialog.ngdialog-theme-selectBox .ngdialog-content {
+    text-align: center;
+    line-height: 6vh;
+    background: #fff;
+    border-radius: 0.32rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 0 3vw;
+}
+
+.ngdialog.ngdialog-theme-selectBox .ngdialog-content .selectBox {
+    width: 7.467rem;
+}
+
+.ngdialog.ngdialog-theme-selectBox .ngdialog-content .selectBox>span {
+    font-size: 0.427rem;
+    color: #000;
+    margin: 1.24rem 0 0 0;
+    display: block;
+}
+
+.ngdialog.ngdialog-theme-selectBox .ngdialog-content .selectBox .selectBoxBottom {
+    margin: 1.5rem 0 0.9rem 0;
+}
+
+.ngdialog.ngdialog-theme-selectBox .ngdialog-content .selectBox .selectBoxBottom>button {
+    width: 3rem;
+    height: 0.8rem;
+    background-color: #fa5956;
+    border-radius: 0.587rem;
+    font-size: 0.427rem;
+    color: #fff;
+    margin-left: 0.55rem;
+    float: left;
+}
+
+.ngdialog.ngdialog-theme-loading {
+    padding-top: 50%;
+    padding-left: 50%;
+}
+
+.ngdialog.ngdialog-theme-loading .ngdialog-content {
+    text-align: center;
+    line-height: 6vh;
+    background: transparent;
+    color: #fff;
+    border-radius: 1vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 0 3vw;
+}

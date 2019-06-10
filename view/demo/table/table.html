@@ -1,0 +1,194 @@
+<div class="monitor">
+    <div class="header_box">
+        <div class="group_box">
+            <div class="form_group">
+                <label for="">请选择时间</label>
+                <input type="text" onchange="" ng-model="subdataTime" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:true});">
+            </div>
+
+            <div class="form_group">
+                <label for="">轧辊类型</label>
+                <select  ng-model="params.sex" >
+                    <option value="">请选择</option>
+                    <option ng-repeat="item in responseList" value="{{item.key}}">{{item.name}}</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label for="">制造厂商</label>
+                <input type="text" data-tag="L3_HEADID">
+            </div>
+            <div class="form_group">
+                <label for="">轧辊合同号</label>
+                <input type="text">
+            </div>
+            <div class="form_group">
+                <label for="">轧辊直径</label>
+                <select name="" id="">
+                    <option value="请选择"></option>
+                    <option value="1">111</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label for="">轧辊状态</label>
+                <select name="" id="">
+                    <option value="请选择"></option>
+                    <option value="1">111</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label for="">轧辊位置</label>
+                <select name="" id="">
+                    <option value="请选择"></option>
+                    <option value="1">111</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label for="">轧辊编号</label>
+                <select name="" id="">
+                    <option value="请选择"></option>
+                    <option value="1">111</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label for="">轧辊材质</label>
+                <select name="" id="">
+                    <option value="请选择"></option>
+                    <option value="1">111</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label for="">支撑轴承箱号</label>
+                <select name="" id="">
+                    <option value="请选择"></option>
+                    <option value="1">111</option>
+                </select>
+            </div>
+        </div>
+        <div class="query_box">
+            <button ng-click="test()" class="btn querybtn">查询</button>
+            <button class="btn querybtn_all">查看全部</button>
+            <button class="btn querybtn_all">重置</button>
+        </div>
+    </div>
+    <div class="body_box">
+        <div class="table_box">
+            <table>
+                <thead>
+                    <tr>
+                        <th>轧辊编号</th>
+                        <th>轧辊类型</th>
+                        <th>轧辊状态</th>
+                        <th>机架号</th>
+                        <th>轧辊位置</th>
+                        <th>配对棍号</th>
+                        <th>配对时间</th>
+                        <th>操作侧轴承箱号</th>
+                        <th>操作侧轴承箱号</th>
+                        <th>操作侧轴承箱号</th>
+                        <th>操作侧轴承箱号</th>
+                        <th>操作侧轴承箱号</th>
+                        <th>操作侧轴承箱号</th>
+                        <th>操作侧轴承箱号</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]">
+                        <td>0035</td>
+                        <td>工作轴</td>
+                        <td>上机</td>
+                        <td>R</td>
+                        <td>上</td>
+                        <td>0036</td>
+                        <td>2019-12-19 17:26:12</td>
+                        <td>s-318</td>
+                        <td>11005</td>
+                        <td>11005</td>
+                        <td>11005</td>
+                        <td>11005</td>
+                        <td>11005</td>
+                        <td>
+                            <button class="plb_ch sub">修改<i class="fa fa-eyedropper"></i></button>
+                            <button class="plb_ch del">删除<i class="fa fa-trash-o"></i></button>
+                            <button class="plb_ch add">增加<i class="fa fa-plus-square-o"></i></button>
+                            <button class="plb_ch plm">公共<i class="fa fa-sitemap"></i></button>
+                            <button class="plb_ch plm1">公共<i class="fa fa-bars"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <tm-pagination conf="paginationConf"></tm-pagination>
+        </div>
+    </div>
+    <div class="footer_box">
+        <div class="footer_group">
+            <div class="footer_group_item">
+                <label for="">轴承号</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">轴承类型</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">对应机架号</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">对应轧辊类型</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">对应轧辊位置</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">安装位置</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">轴承状态</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">装配轴承号</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">装配轴承箱号</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">装配棍号</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">工作面</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">工作时长</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">修改轴承状态</label>
+                <select>
+                    <option value="">请选择</option>
+                </select>
+            </div>
+            <div class="footer_group_item">
+                <label for="">衬套编号</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">锥套编号</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="footer_group_btn">
+            <button>导出</button>
+            <button>添加</button>
+            <button>修改</button>
+            <button>删除</button>
+        </div>
+    </div>
+</div>

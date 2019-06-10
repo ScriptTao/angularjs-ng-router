@@ -1,0 +1,27 @@
+<style>
+    .tabList{
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        margin: 8px;
+        background-color: #ffffff;
+    }
+    .tabList ul{
+        overflow: hidden;
+    }
+    .tabList ul li{
+        width: 100px;
+        float: left;
+        text-align: center;
+        padding: 10px 20px;
+        cursor: pointer;
+        height: 40px;
+    }
+    .tabList ul .check{
+        border-bottom: 2px solid #337ab7;
+        color: #337ab7;
+    }
+</style>
+<div class="tabList">
+    <ul>
+        <li ng-repeat="item in tabList" ng-click="goTab(item,item.url)"  ng-class="{'check' : checkFlag == item}" >{{item.name}}</li>
+    </ul>
+</div>

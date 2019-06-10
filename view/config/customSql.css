@@ -1,0 +1,49 @@
+.customSql .header_box .query_box {
+  padding-top: 28px;
+}
+.customSql .header_box .query_box .first_menu {
+  width: 120px;
+}
+.public_sure_cancel_cont {
+  height: auto;
+}
+.adduser .tip {
+  font-size: 16px;
+  padding: 8px 15px;
+  letter-spacing: 2px;
+  background-color: #eb891b;
+  color: #ffffff;
+}
+.adduser .bullet_box {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.adduser .bullet_box .form_group {
+  margin-bottom: 8px;
+}
+.adduser .bullet_box .form_group label {
+  font-size: 13px;
+  min-width: 65px;
+  display: inline-block;
+  text-align: right;
+  color: #333333;
+  margin-right: 30px;
+}
+.adduser .bullet_box .form_group .pbin {
+  padding: 2px 8px;
+  border: 1px solid #e5e5e5;
+  outline: medium;
+  visibility: inherit;
+  width: 200px;
+  height: 25px;
+  border-radius: 2px;
+}
+.adduser .bullet_box .form_group select {
+  padding: 2px 8px;
+  border: 1px solid #e5e5e5;
+  outline: medium;
+  visibility: inherit;
+  width: 110px;
+  height: 25px;
+  border-radius: 2px;
+}

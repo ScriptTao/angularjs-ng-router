@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box !important;
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /*background-color: #f5f5f5;*/
+    background-color: #ffffff;
+    font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, Verdana, sans-serif, "\5B8B\4F53";
+    color: #333333;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font: 12px/1.5 tahoma, arial, \5b8b\4f53;
+}
+input:focus{
+    border: 1px solid #409EFF !important;
+}
+select:focus{
+    border: 1px solid #409EFF !important;
+}
+textarea:focus{
+    border: 1px solid #409EFF !important;
+}
+
+/*input:hover{
+    border: 1px solid #999999 !important;
+}
+select:hover{
+    border: 1px solid #999999 !important;
+}
+textarea:hover{
+    border: 1px solid #999999 !important;
+}*/
+select,
+textarea
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: couriernew, courier, monospace;
+}
+
+small {
+    font-size: 12px;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+legend {
+    color: #000;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+}
+
+input {
+    visibility: inherit;
+    border: none;
+    outline: medium;
+    background: 0;
+    border: 1px solid #ccc;
+}
+
+input::-webkit-input-placeholder {
+    color: #aab2bd;
+    font-size: 12px;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+i {
+    font-style: normal;
+}
+
+strong, b {
+    font-weight: normal;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.c90 {
+    color: #909090;
+}
+
+.fl {
+    float: left;
+}

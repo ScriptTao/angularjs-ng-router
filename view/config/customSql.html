@@ -1,0 +1,137 @@
+<div class="monitor customSql">
+    <div class="header_box">
+        <div class="group_box">
+            <div class="form_group">
+                <label for="">key</label>
+                <input type="text" ng-model="params.queryObj.control_key">
+            </div>
+            <div class="form_group">
+                <label for="">sql</label>
+                <input type="text" ng-model="params.queryObj.control_sql">
+            </div>
+            <div class="form_group">
+                <label for="">创建时间</label>
+                <input type="text" class="time_input" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:true});">
+                <input type="text" class="time_input" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:true});">
+            </div>
+        </div>
+        <div class="query_box">
+            <button ng-click="queryByCondition()" class="btn querybtn">查询</button>
+            <button ng-click="addSql()" class="btn querybtn_all">添加</button>
+            <button ng-click="reset()" class="btn querybtn_all">重置</button>
+        </div>
+
+    </div>
+    <div class="body_box">
+        <div class="table_box">
+            <table>
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>key</th>
+                    <th>sql</th>
+                    <th>创建人</th>
+                    <th>创建时间</th>
+                    <th>最后修改人</th>
+                    <th>最后修改时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!--<tr>
+                    <td>
+                        1
+                    </td>
+                    <td>test</td>
+                    <td>select * from sys_user where account = @account</td>
+                    <td>test</td>
+                    <td>2019-05-28 10:58</td>
+                    <td>test</td>
+                    <td>2019-05-28 10:58</td>
+                    <td>修改/删除</td>
+                </tr>-->
+                <tr ng-repeat="item in sqlList">
+                    <td>{{$index+1}}</td>
+                    <td>{{item.control_key}}</td>
+                    <td>{{item.control_sql}}</td>
+                    <td>{{item.createname}}</td>
+                    <td>{{item.createtime}}</td>
+                    <td>{{item.modiname}}</td>
+                    <td>{{item.moditime}}</td>
+                    <td>
+                        <a ng-click="deleteSql(item.indocno)">删除</a>&nbsp;
+                        <a ng-click="modSql(item.indocno)">修改</a>&nbsp;
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <tm-pagination conf="paginationConf"></tm-pagination>
+        </div>
+    </div>
+</div>
+<!--添加sql-->
+<script type="text/ng-template" id="addSql">
+    <div class="public_sure_cancel_cont adduser" style="width: auto">
+        <div class="tip">新建自定义接口</div>
+        <div class="bullet_box">
+            <div class="form_group">
+                <label>数据库类型</label>
+                <select ng-model="params.addSqlobj.db_type" >
+                    <option value="">请选择</option>
+                    <option value="mysql">mysql</option>
+                    <option value="oracle">oracle</option>
+                </select>
+            </div>
+            <div class="form_group">
+                <label>key</label>
+                <input ng-model="params.addSqlobj.control_key" type="text" class="pbin">
+            </div>
+            <div class="form_group">
+                <label>sql</label>
+                <textarea ng-model="params.addSqlobj.control_sql" style="border: 1px solid #e5e5e5"></textarea>
+            </div>
+        </div>
+        <div class="btn_container">
+            <button class="btn_cancel" ng-click="cancel()">取消</button>
+            <button class="btn_sure" ng-click="sure()">确定</button>
+        </div>
+    </div>
+</script>
+<!--删除sql-->
+<script  type="text/ng-template" id="deleteSql">
+    <div class="public_sure_cancel_cont">
+        <div class="tip">确定删除吗?</div>
+        <div class="btn_container">
+            <button class="btn_cancel" ng-click="cancel()">取消</button>
+            <button class="btn_sure" ng-click="sure()">确定</button>
+        </div>
+    </div>
+</script>
+<!--修改sql-->
+<script type="text/ng-template" id="modSql">
+    <div class="public_sure_cancel_cont adduser">
+        <div class="tip">修改自定义接口</div>
+        <div class="bullet_box">
+            <div class="form_group">
+                <label>数据库类型</label>
+                <select ng-model="params.modSqlobj.db_type">
+                    <option value="oracle">oracle</option>
+                    <option value="mysql">mysql</option>
+                </select>
+                <!--<input ng-model="params.modSqlobj.db_type" type="text" class="pbin">-->
+            </div>
+            <div class="form_group">
+                <label>key</label>
+                <input ng-model="params.modSqlobj.control_key" type="text" class="pbin">
+            </div>
+            <div class="form_group">
+                <label>sql</label>
+                <textarea ng-model="params.modSqlobj.control_sql" type="text" class="pbin"></textarea>
+            </div>
+        </div>
+        <div class="btn_container">
+            <button class="btn_cancel" ng-click="cancel()">取消</button>
+            <button class="btn_sure" ng-click="sure()">确定</button>
+        </div>
+    </div>
+</script>

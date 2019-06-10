@@ -1,0 +1,171 @@
+<div class="userConfig">
+    <div class="main">
+        <div class="header_box">
+            <div class="group_box">
+                <div class="form_group">
+                    <label for="">姓名</label>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="query_box">
+                <button class="btn querybtn">查询</button>
+                <button class="btn querybtn_all">查看全部</button>
+                <button ng-click="addUser()" class="btn querybtn_all">添加用户</button>
+            </div>
+        </div>
+        <div class="body_box">
+            <div class="table_box">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>帐号</th>
+                        <th>密码</th>
+                        <th>菜单</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in userList" class="ng-scope">
+                        <td>{{item.name}}</td>
+                        <td>{{item.account}}</td>
+                        <td>{{item.password}}</td>
+                        <td>
+                            <span data-a = "{{item2}}" ng-repeat="item2 in item.menu" style="margin-right: 20px">
+                                {{item2.menu_name}}
+                                <span data-b = "{{item3}}" ng-repeat="item3 in item2.children">
+                                    ({{item3.menu_name}})
+                                </span>
+                            </span>
+                        </td>
+                        <td>
+                            <!--<button>修改</button>-->
+                            <button ng-click="del(item)">删除</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="dialog">
+    <div class="public_sure_cancel_cont adduser">
+        <div class="tip">添加用户</div>
+        <div class="bullet_box">
+            <div class="form_group">
+                <label for="">姓名</label>
+                <input ng-model="name" type="text">
+            </div>
+            <div class="form_group">
+                <label for="">帐号</label>
+                <input ng-model="account" type="text">
+            </div>
+            <div class="form_group">
+                <label for="">密码</label>
+                <input ng-model="password" type="text">
+            </div>
+            <div class="form_group">
+                <label for="">菜单</label>
+                <div class="menu" style="margin-left: 50px">
+                    <div ng-repeat="one in menu_list" class="one">
+                        <input ng-click="checkOne(one)" ng-model="one.choose" type="checkbox"
+                               style="vertical-align: middle; margin-right: 5px">{{one.menu_name}}
+                        <div ng-repeat="two in one.children" class="two" style="margin-left: 20px">
+                            <input ng-click="checkTwo(one,two)" ng-model="two.choose" type="checkbox"
+                                   style="vertical-align: middle; margin-right: 5px">
+                            {{one.menu_name}}({{two.menu_name}})
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="btn_container">
+            <button class="btn_cancel" ng-click="cancel()">取消</button>
+            <button class="btn_sure" ng-click="sure()">确定</button>
+        </div>
+    </div>
+</script>
+<style lang="less">
+    .userConfig {
+        background-color: #f5f5f5;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .userConfig .main {
+        width: 1200px;
+        min-height: 600px;
+        margin: 20px auto;
+        background-color: #ffffff;
+        overflow: hidden;
+    }
+
+    .header_box .query_box {
+        padding-top: 25px;
+    }
+
+    .public_sure_cancel_cont {
+        width: auto;
+        height: auto;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table thead {
+        background-color: #e5e5e5;
+        letter-spacing: 1px;
+    }
+
+    table thead tr th {
+        padding: 3px 5px;
+        white-space: normal;
+        word-break: break-all;
+        border: 1px solid #dddddd;
+        text-align: center;
+    }
+
+    table tbody tr {
+        cursor: pointer;
+    }
+
+    table tbody tr:hover {
+        background-color: #F0F0F0 !important;
+    }
+
+    table tbody tr:nth-child(2n) {
+        background-color: #f9f9f9;
+    }
+
+    table tbody tr td {
+        padding: 3px 5px;
+        white-space: normal;
+        word-break: break-all;
+        border: 1px solid #dddddd;
+        text-align: center;
+    }
+
+    .bullet_box {
+        padding: 3px 20px 10px 10px;
+    }
+
+    .bullet_box .form_group {
+        margin: 1px 0px 10px 30px;
+    }
+
+    .bullet_box .form_group label {
+        margin-right: 5px;
+    }
+
+    .public_sure_cancel_cont .tip {
+        color: #ffffff;
+        font-size: 16px;
+        background-color: #337ab7;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+</style>

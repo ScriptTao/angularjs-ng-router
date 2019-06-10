@@ -1,0 +1,13 @@
+.wrap {
+  width: 100px;
+  height: 200px;
+  margin: 100px auto;
+  background-color: #cccccc;
+}
+.wrap:hover {
+  background-color: pink;
+}
+.wrap .inner {
+  width: 40px;
+  height: 30px;
+}

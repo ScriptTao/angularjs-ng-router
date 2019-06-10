@@ -1,0 +1,318 @@
+.btn {
+  display: inline-block;
+  height: 30px;
+  padding: 0 25px;
+  margin: 0;
+  border: 1px solid #b0b0b0;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  color: #b0b0b0;
+  cursor: pointer;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  margin: 0 7px;
+  border-radius: 3px;
+}
+.btn:hover {
+  background-color: #2f5597;
+}
+.public_sure_cancel_cont {
+  width: 300px;
+  height: 100px;
+}
+.public_sure_cancel_cont .tip {
+  font-size: 18px;
+  color: #333333;
+  padding: 12px;
+}
+.public_sure_cancel_cont .btn_container {
+  width: 100%;
+  height: 57px;
+  padding: 12px 0;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+}
+.public_sure_cancel_cont .btn_container .btn_sure {
+  display: inline-block;
+  height: 30px;
+  padding: 0 25px;
+  margin: 0;
+  border: 1px solid #b0b0b0;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  color: #b0b0b0;
+  cursor: pointer;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  margin: 0 7px;
+  border-radius: 3px;
+  background: #eb891b;
+  border-color: #eb891b;
+  color: #fff;
+}
+.public_sure_cancel_cont .btn_container .btn_sure:hover {
+  background-color: #2f5597;
+}
+.public_sure_cancel_cont .btn_container .btn_sure:hover {
+  background-color: #1e3a6b;
+  border-color: #1e3a6b;
+  color: #fff;
+}
+.public_sure_cancel_cont .btn_container .btn_cancel {
+  display: inline-block;
+  height: 30px;
+  padding: 0 25px;
+  margin: 0;
+  border: 1px solid #b0b0b0;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  color: #b0b0b0;
+  cursor: pointer;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  margin: 0 7px;
+  border-radius: 3px;
+  border-color: #b0b0b0;
+  background: #fff;
+  color: #757575;
+}
+.public_sure_cancel_cont .btn_container .btn_cancel:hover {
+  background-color: #2f5597;
+}
+.public_sure_cancel_cont .btn_container .btn_cancel:hover {
+  color: #fff;
+  background-color: #757575;
+  border-color: #757575;
+}
+.querybtn_all {
+  background-color: #eb891b;
+  color: #ffffff;
+}
+.querybtn {
+  background-color: #eb891b;
+  color: #ffffff;
+}
+.plb_ch {
+  border: none;
+  -webkit-transition: all .4s;
+  display: inline-block;
+  padding: 0px 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+.plb_ch i {
+  margin-left: 5px;
+}
+.sub {
+  background-color: #409EFF;
+  border: 1px solid #409EFF;
+  color: #ffffff;
+}
+.sub:hover {
+  background-color: #337ab7;
+}
+.del {
+  color: #ffffff;
+  background-color: #fa5956;
+  border-color: #fa5956;
+}
+.del:hover {
+  background-color: #ac2925;
+}
+.add {
+  background-color: #eb891b;
+  border: 1px solid #eb891b;
+  color: #ffffff;
+}
+.add:hover {
+  background-color: #f17002;
+}
+.plm {
+  background-color: #1b926c;
+  border: 1px solid #1b926c;
+  color: #ffffff;
+}
+.plm:hover {
+  background-color: #197b5c;
+}
+.plm1 {
+  background-color: #999;
+  border: 1px solid #999;
+  color: #ffffff;
+}
+.plm1:hover {
+  background-color: #777;
+}
+.header_box {
+  position: relative;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  margin: 8px;
+  background-color: #ffffff;
+  padding: 20px;
+}
+.header_box .group_box {
+  overflow: hidden;
+  width: 100%;
+  padding-right: 400px;
+}
+.header_box .group_box .form_group {
+  margin: 0px 20px 20px 0;
+  float: left;
+}
+.header_box .group_box .form_group label {
+  font-size: 13px;
+  min-width: 110px;
+  display: inline-block;
+  text-align: right;
+  color: #333333;
+  margin-right: 3px;
+}
+.header_box .group_box .form_group input {
+  padding: 2px 8px;
+  border: 1px solid #e5e5e5;
+  outline: medium;
+  visibility: inherit;
+  width: 110px;
+  height: 25px;
+  border-radius: 2px;
+}
+.header_box .group_box .form_group select {
+  padding: 2px 8px;
+  border: 1px solid #e5e5e5;
+  outline: medium;
+  visibility: inherit;
+  width: 110px;
+  height: 25px;
+  border-radius: 2px;
+}
+.header_box .group_box .form_group .time_input {
+  width: 140px;
+}
+.header_box .query_box {
+  width: 400px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 100%;
+  border-left: 1px dashed #ccc;
+  text-align: center;
+  padding-top: 50px;
+}
+.body_box {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  margin: 8px;
+  background-color: #ffffff;
+  padding: 20px 20px 10px 20px;
+}
+.body_box .table_box table {
+  width: 100%;
+  font-size: 14px;
+}
+.body_box .table_box table thead {
+  background-color: #e5e5e5;
+  letter-spacing: 1px;
+}
+.body_box .table_box table thead tr {
+  height: 35px;
+}
+.body_box .table_box table thead tr th {
+  padding: 3px 5px;
+  white-space: normal;
+  word-break: break-all;
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+.body_box .table_box table tbody tr {
+  cursor: pointer;
+  height: 35px;
+}
+.body_box .table_box table tbody tr:hover {
+  background-color: #F0F0F0 !important;
+}
+.body_box .table_box table tbody tr:nth-child(2n) {
+  background-color: #f9f9f9;
+}
+.body_box .table_box table tbody tr td {
+  padding: 3px 5px;
+  white-space: normal;
+  word-break: break-all;
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+.body_box .table_box table tbody tr td a:hover {
+  color: #eb891b;
+}
+.footer_box {
+  padding: 20px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  margin: 8px;
+  background-color: #ffffff;
+}
+.footer_box .footer_group {
+  overflow: hidden;
+}
+.footer_box .footer_group .footer_group_item {
+  float: left;
+  margin: 0px 20px 10px 0px;
+}
+.footer_box .footer_group .footer_group_item label {
+  font-size: 13px;
+  min-width: 100px;
+  display: inline-block;
+  text-align: right;
+  color: #333333;
+  margin-right: 2px;
+}
+.footer_box .footer_group .footer_group_item input {
+  width: 80px;
+  height: 20px;
+  padding: 1px 4px;
+  border: 1px solid #e5e5e5;
+  outline: medium;
+  visibility: inherit;
+  border-radius: 2px;
+}
+.footer_box .footer_group .footer_group_item select {
+  width: 80px;
+  height: 20px;
+  padding: 1px 4px;
+  border: 1px solid #e5e5e5;
+  outline: medium;
+  visibility: inherit;
+  color: #333333;
+  border-radius: 2px;
+}
+.footer_box .footer_group_btn {
+  width: 100%;
+  text-align: center;
+  margin: 15px 0px;
+}
+.footer_box .footer_group_btn button {
+  display: inline-block;
+  height: 30px;
+  padding: 0 25px;
+  margin: 0;
+  border: 1px solid #b0b0b0;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  color: #b0b0b0;
+  cursor: pointer;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  margin: 0 7px;
+  border-radius: 3px;
+  width: 70px;
+  height: 25px;
+  line-height: 25px;
+  background-color: #eb891b;
+  color: #ffffff;
+  margin-left: 25px;
+}
+.footer_box .footer_group_btn button:hover {
+  background-color: #2f5597;
+}

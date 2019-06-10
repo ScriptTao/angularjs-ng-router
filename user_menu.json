@@ -1,0 +1,21 @@
+[
+{
+	"name":"李四",
+	"account":"admin",
+	"password":"123456",
+	"menu":[
+		{"menu_name":"人员管理","menu_url":"userManage",
+			"children":[{"menu_name":"角色管理","menu_url":"roleManage"},{"menu_name":"角色管理","menu_url":"roleManage"}]},
+		{"menu_name":"角色管理","menu_url":"roleManage","children":[{"menu_name":"角色管理","menu_url":"roleManage"},{"menu_name":"角色管理","menu_url":"roleManage"}]}
+	]
+},
+{
+	"name":"test",
+	"account":"test",
+	"password":"test",
+	"menu":[
+		{"menu_name":"test0","menu_url":"","children":[{"menu_name":"test01","menu_url":""},{"menu_name":"test02","menu_url":""}]},
+		{"menu_name":"test1","menu_url":"","children":[{"menu_name":"test11","menu_url":""},{"menu_name":"test12","menu_url":""}]}
+	]
+}
+]
