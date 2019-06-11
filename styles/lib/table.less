@@ -3,9 +3,10 @@
 .header_box{
   position: relative;
   box-shadow: 0 2px 20px rgba(0,0,0,.1);
-  margin: 8px;
+  margin: 15px;
   background-color: #ffffff;
   padding: 20px;
+  border-radius: 8px;
   .group_box{
     overflow: hidden;
     width: 100%;
@@ -58,15 +59,18 @@
 }
 .body_box{
   box-shadow: 0 2px 20px rgba(0,0,0,.1);
-  margin: 8px;
+  margin: 15px;
   background-color: #ffffff;
   padding: 20px 20px 10px 20px;
+  border-radius: 8px;
   .table_box{
     table{
       width: 100%;
       font-size: 14px;
       thead{
-        background-color: #e5e5e5;
+        //background-color: #e5e5e5;
+        background-color: #cbcde2;
+        //background: linear-gradient(to right, #cbcde2, #0696ef);
         letter-spacing: 1px;
         tr{
           height: 35px;
@@ -74,7 +78,7 @@
             padding: 3px 5px;
             white-space: normal;
             word-break: break-all;
-            border: 1px solid @borderColor;
+            //border: 1px solid @borderColor;
             text-align: center;
           }
         }
@@ -84,10 +88,10 @@
           cursor: pointer;
           height: 35px;
           &:hover{
-            background-color: #F0F0F0 !important;
+            background-color: #dcdff3 !important;
           }
           &:nth-child(2n){
-            background-color: #f9f9f9;
+            background-color: #f0f2ff;
           }
           td{
             padding: 3px 5px;
@@ -109,8 +113,9 @@
 .footer_box{
   padding: 20px;
   box-shadow: 0 2px 20px rgba(0,0,0,.1);
-  margin: 8px;
+  margin: 15px;
   background-color: #ffffff;
+  border-radius: 8px;
   .footer_group{
     overflow: hidden;
     .footer_group_item{
@@ -122,7 +127,7 @@
         display: inline-block;
         text-align: right;
         color: #333333;
-        margin-right: 2px;
+        margin-right: 7px;
       }
       input{
         width: 80px;

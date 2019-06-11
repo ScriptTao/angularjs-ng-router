@@ -1,10 +1,11 @@
 .demoCt{
     width: 1000px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 40px;
-    border-left: 1px solid #cccccc;
-    border-right: 1px solid #cccccc;
-
+    /* border-left: 1px solid #cccccc; */
+    /* border-right: 1px solid #cccccc; */
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 .demoCt h1{
     margin-bottom: 30px;

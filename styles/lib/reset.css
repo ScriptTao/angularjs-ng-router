@@ -9,7 +9,8 @@ html {
     /*overflow: hidden;*/
     /*background-color: #f5f5f5;*/
     background-color: #ffffff;
-    font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, Verdana, sans-serif, "\5B8B\4F53";
+    /*font-family: "Microsoft Yahei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, tahoma, arial, Verdana, sans-serif, "\5B8B\4F53";*/
+    font-family: -apple-system-font,PingFang SC,Helvetica Neue,Helvetica,STHeiTi,sans-serif;
     color: #333333;
 }
 
@@ -42,7 +43,7 @@ td {
     padding: 0;
 }
 
-body,
+/*body,*/
 button,
 input,
 select,

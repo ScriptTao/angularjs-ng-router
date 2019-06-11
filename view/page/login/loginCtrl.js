@@ -33,7 +33,8 @@ monitor.controller('loginCtrl', function ($scope, $state, $stateParams, ngDialog
             $scope.param.passWordFlag = false;
         }
         $.ajax({
-            url: "../base/user_menu.json",
+
+            url: "user_menu.json",
             type: "GET",
             dataType: "json",
             success: function (data) {

@@ -1,0 +1,28 @@
+<div class="SendMessage demoCt">
+    <h1>SendMessage</h1>
+    <p>代码：</p>
+    <pre>
+        <code>
+monitor.controller('SendMessageCtrl', function ($scope, $state, $stateParams, ngDialog , $interval,sendTag,SendMessage) {
+    SendMessage.save({
+        "id": "msg",
+        "timeout": 3,
+        "reply": true,
+        "data": [
+            {
+                "x": "1",
+                "y": "2"
+            },
+            {
+                "x": "3",
+                "y": "4"
+            }
+        ]
+    },function (res) {
+        console.log(res);
+    })
+
+})
+        </code>
+    </pre>
+</div>

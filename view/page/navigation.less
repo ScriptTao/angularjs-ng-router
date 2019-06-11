@@ -1,7 +1,9 @@
 //@import "../../styles/lib/theme.less";
 @import "../../styles/lib/theme";
 
-@title_h: 30px;
+@title_h: 50px;
+@leftw: 190px;
+
 
 .navigation {
   width: 100%;
@@ -27,8 +29,11 @@
     .top_nav {
       height: @title_h;
       line-height: @title_h+(-2);
-      overflow: hidden;
+      //overflow: hidden;
       position: relative;
+      color: #ffffff;
+      font-size: 14px;
+
       > div {
         float: left;
       }
@@ -40,14 +45,17 @@
         position: absolute;
         left: 0px;
         top: 0px;
-        background-color: #ffffff;
+        background-color: #2196f3;
       }
       .nav_list {
-        width: 100%;
-        padding-left: 190px;
+        width: calc(100% - 190px);
+        //padding-left: 190px;
+        margin-left: 190px;
         height: 100%;
         position: relative;
         overflow: hidden;
+        background: linear-gradient(to right, #2196f3 , #7b4397);
+        box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.5);
         .close_fl {
           text-align: center;
           width: 26px;
@@ -56,14 +64,15 @@
           top: 0px;
           left: 190px;
           cursor: pointer;
-          .bgc_blue()
+          //.bgc_blue()
         }
         .nav_list_ul {
           width: 100%;
           padding-left: 26px;
           padding-right: 170px;
           overflow: hidden;
-          .bgc_nav_t();
+
+          //.bgc_nav_t();
           li {
             height: 100%;
             cursor: pointer;
@@ -71,13 +80,16 @@
             width: 120px;
             text-align: center;
             position: relative;
+            letter-spacing: 1px;
             i {
               padding-right: 5px;
             }
           }
           .check_one_sty {
             //.bgc_ffffff()
-            border-bottom: 2px solid @themeColor;
+            //border-bottom: 2px solid #7b4397;
+            border-bottom: 2px solid #ffffff;
+            font-weight: bold;
           }
         }
         .login_info{
@@ -85,7 +97,7 @@
           right: 0px;
           top: 0px;
           width: 170px;
-          .bgc_nav_t();
+          //.bgc_nav_t();
           ul{
             li{
               cursor: pointer;
@@ -140,13 +152,16 @@
   .navigation_left {
     transition: All 2s ease-in-out;
     position: absolute;
+    box-shadow: 3px 0px 10px #b0b0b0;
     width: 190px;
     top: 0px;
-    padding-top: 52px;
+    padding-top: 80px;
     left: 0px;
     min-height: 100%;
     //bottom: 0px;
-    .bgc_nav_l();
+    //.bgc_nav_l();
+    color: #4C66BD;
+    background-color: #ffffff;
     .left_nav {
       width: 100%;
       height: 100%;
@@ -172,6 +187,7 @@
         width: 100%;
         font-size: 13px;
         cursor: pointer;
+
         //color: #222222;
         >ul {
           width: 100%;
@@ -254,6 +270,8 @@
     padding: 52px 0 0 190px;
     transition: All 2s ease-in-out;
     background-color: #f5f5f5;
+    overflow-y: scroll;
+    height: 100%;
   }
   .ui_view_show {
     padding-left: 190px !important;

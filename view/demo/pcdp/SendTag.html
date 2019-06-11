@@ -1,0 +1,19 @@
+<div class="SendTag demoCt">
+    <h1>SendTag</h1>
+    <p>代码：</p>
+    <pre>
+        <code>
+monitor.controller('SendTagCtrl', function ($scope, $state, $stateParams, ngDialog, $interval, sendTag) {
+    var tags = [
+        {
+            "name": "asd213",
+            "value": "test"
+        },
+    ];
+    sendTag(tags, function (response) {
+        console.log(response);
+    });
+})
+        </code>
+    </pre>
+</div>

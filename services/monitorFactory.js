@@ -83,11 +83,6 @@ monitor.factory('httpInterceptor', ["$q", "$injector", function($q) {
     .factory('CustomDeleteOne', ['$resource', function($resource) {
         return $resource(IP + 'controlInterface/deleteOne')
     }])
-
-    //数据字典查询
-    .factory('getDataByCodeDict', ['$resource', function($resource) {
-        return $resource(IP + 'sysDict/getDataByCode')
-    }])
     //自定义sql查询
     .factory('commonFindData', ['$resource', function($resource) {
         return $resource(IP + 'common/findData')

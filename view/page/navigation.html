@@ -1,8 +1,9 @@
 <div class="navigation">
     <div ng-if = "param.navigationTopFlag" class="navgition_top">
-        <div class="title">{{projectName}}</div>
+        <div class="title" ng-show="none">{{projectName}}</div>
         <div class="top_nav">
-            <div class="now_time">{{nowdate |nowdateFom}}</div>
+            <!--<div class="now_time">{{nowdate |nowdateFom}}</div>-->
+            <div class="now_time">{{projectName}}</div>
             <div class="nav_list">
                 <div class="close_fl" ng-click="leftSwitch()">
                     <i class="fa fa-align-justify"></i>
@@ -10,13 +11,14 @@
                 <ul class="nav_list_ul">
                     <li  ng-click="queryTwo(item)" ng-class="{'check_one_sty' : param.oneStyle == item.menu_name}" ng-repeat="item in navListOne">
                         <e></e>
-                        <i class="fa  fa-street-view"></i>
+                        <!--<i class="fa  fa-street-view"></i>-->
                         {{item.menu_name}}
                     </li>
                 </ul>
                 <div class="login_info">
                     <ul>
-                        <li ng-mouseenter = "teamInformationenter()" ng-mouseleave = "teamInformationleave()">班组信息</li>
+                        <!--<li ng-mouseenter = "teamInformationenter()" ng-mouseleave = "teamInformationleave()">班组信息</li>-->
+                        <li>欢迎：{{userName}}</li>
                         <li ng-click="logout()">
                             <i class="fa fa-dot-circle-o"></i>
                             退出
@@ -24,7 +26,7 @@
                     </ul>
                 </div>
                 <!--班组信息-->
-                <div ng-if="param.teamInformationFlag" class="team_info">
+                <!--<div ng-if="param.teamInformationFlag" class="team_info">
                     <i class="triangle"></i>
                     <p>班组信息</p>
                     <ul>
@@ -37,17 +39,17 @@
                         <li>空气：<span>14</span></li>
                         <li>中间包保护粉：<span>14</span></li>
                     </ul>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
     <div ng-if = "param.navigationLeftFlag" ng-class="{true : 'navigation_left_switch_show',false : 'navigation_left_switch_hide' }[param.leftSwitch]" class="navigation_left">
         <div class="left_nav">
-            <div class="user_info">
+            <!--<div class="user_info">
                 <img src="images/angang.jpg" alt="">
-                <!--<img src="images/header_icon_old.png" alt="">-->
+                &lt;!&ndash;<img src="images/header_icon_old.png" alt="">&ndash;&gt;
                 <span>你好! {{userName}}，欢迎登陆</span>
-            </div>
+            </div>-->
             <div class="nav_list">
                 <!--二级菜单-->
                 <ul>

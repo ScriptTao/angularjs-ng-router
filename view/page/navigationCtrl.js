@@ -75,6 +75,7 @@ monitor.controller('navigationCtrl', function ($scope, $state, $stateParams, ngD
     $scope.param.twoStyle = "userManage"
     $scope.twoPageGo = function (item) {
         $scope.param.twoStyle = item.menu_url//控制样式
+        $state.go("monitor-web." + item.menu_url + "");
     };
     $scope.threePageGo = function (item) {
         $scope.param.threeStyle = item.menu_url//控制样式

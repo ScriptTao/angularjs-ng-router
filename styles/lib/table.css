@@ -1,9 +1,9 @@
 .btn {
+  border: none;
   display: inline-block;
   height: 30px;
   padding: 0 25px;
   margin: 0;
-  border: 1px solid #b0b0b0;
   font-size: 14px;
   line-height: 30px;
   text-align: center;
@@ -16,10 +16,6 @@
 }
 .btn:hover {
   background-color: #2f5597;
-}
-.public_sure_cancel_cont {
-  /*width: 300px;*/
-  /*height: 100px;*/
 }
 .public_sure_cancel_cont .tip {
   font-size: 18px;
@@ -34,11 +30,11 @@
   text-align: center;
 }
 .public_sure_cancel_cont .btn_container .btn_sure {
+  border: none;
   display: inline-block;
   height: 30px;
   padding: 0 25px;
   margin: 0;
-  border: 1px solid #b0b0b0;
   font-size: 14px;
   line-height: 30px;
   text-align: center;
@@ -48,8 +44,8 @@
   transition: all .4s;
   margin: 0 7px;
   border-radius: 3px;
-  background: #eb891b;
-  border-color: #eb891b;
+  background: #409eff;
+  border-color: #409eff;
   color: #fff;
 }
 .public_sure_cancel_cont .btn_container .btn_sure:hover {
@@ -61,11 +57,11 @@
   color: #fff;
 }
 .public_sure_cancel_cont .btn_container .btn_cancel {
+  border: none;
   display: inline-block;
   height: 30px;
   padding: 0 25px;
   margin: 0;
-  border: 1px solid #b0b0b0;
   font-size: 14px;
   line-height: 30px;
   text-align: center;
@@ -88,21 +84,21 @@
   border-color: #757575;
 }
 .querybtn_all {
-  background-color: #eb891b;
+  background-color: #409eff;
   color: #ffffff;
 }
 .querybtn {
-  background-color: #eb891b;
+  background-color: #409eff;
   color: #ffffff;
 }
 .plb_ch {
   border: none;
-  -webkit-transition: all .4s;
+  transition: all .4s;
   display: inline-block;
-  padding: 0px 5px;
+  padding: 2px 8px;
   cursor: pointer;
   margin-right: 5px;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 .plb_ch i {
   margin-left: 5px;
@@ -147,12 +143,29 @@
 .plm1:hover {
   background-color: #777;
 }
+.plm2 {
+  background-color: #f796a7;
+  border: 1px solid #f796a7;
+  color: #ffffff;
+}
+.plm2:hover {
+  background-color: #f18497;
+}
+.plm3 {
+  background-color: #9ea9ea;
+  border: 1px solid #9ea9ea;
+  color: #ffffff;
+}
+.plm3:hover {
+  background-color: #8190ea;
+}
 .header_box {
   position: relative;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  margin: 8px;
+  margin: 15px;
   background-color: #ffffff;
   padding: 20px;
+  border-radius: 8px;
 }
 .header_box .group_box {
   overflow: hidden;
@@ -204,16 +217,17 @@
 }
 .body_box {
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  margin: 8px;
+  margin: 15px;
   background-color: #ffffff;
   padding: 20px 20px 10px 20px;
+  border-radius: 8px;
 }
 .body_box .table_box table {
   width: 100%;
   font-size: 14px;
 }
 .body_box .table_box table thead {
-  background-color: #e5e5e5;
+  background-color: #cbcde2;
   letter-spacing: 1px;
 }
 .body_box .table_box table thead tr {
@@ -223,7 +237,6 @@
   padding: 3px 5px;
   white-space: normal;
   word-break: break-all;
-  border: 1px solid #dddddd;
   text-align: center;
 }
 .body_box .table_box table tbody tr {
@@ -231,10 +244,10 @@
   height: 35px;
 }
 .body_box .table_box table tbody tr:hover {
-  background-color: #F0F0F0 !important;
+  background-color: #dcdff3 !important;
 }
 .body_box .table_box table tbody tr:nth-child(2n) {
-  background-color: #f9f9f9;
+  background-color: #f0f2ff;
 }
 .body_box .table_box table tbody tr td {
   padding: 3px 5px;
@@ -244,13 +257,14 @@
   text-align: center;
 }
 .body_box .table_box table tbody tr td a:hover {
-  color: #eb891b;
+  color: #409eff;
 }
 .footer_box {
   padding: 20px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  margin: 8px;
+  margin: 15px;
   background-color: #ffffff;
+  border-radius: 8px;
 }
 .footer_box .footer_group {
   overflow: hidden;
@@ -265,7 +279,7 @@
   display: inline-block;
   text-align: right;
   color: #333333;
-  margin-right: 2px;
+  margin-right: 7px;
 }
 .footer_box .footer_group .footer_group_item input {
   width: 80px;
@@ -292,11 +306,11 @@
   margin: 15px 0px;
 }
 .footer_box .footer_group_btn button {
+  border: none;
   display: inline-block;
   height: 30px;
   padding: 0 25px;
   margin: 0;
-  border: 1px solid #b0b0b0;
   font-size: 14px;
   line-height: 30px;
   text-align: center;
@@ -306,10 +320,8 @@
   transition: all .4s;
   margin: 0 7px;
   border-radius: 3px;
-  /*width: 70px;*/
-  /*height: 25px;*/
   line-height: 25px;
-  background-color: #eb891b;
+  background-color: #409eff;
   color: #ffffff;
   margin-left: 25px;
 }

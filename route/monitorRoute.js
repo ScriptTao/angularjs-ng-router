@@ -112,7 +112,7 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
         /*demo模块*/
 
         //table表格示例 , 分页示例  ,日期插件的使用
-        .state('table', {
+        .state('monitor-web.table', {
             url: '/table',
             templateUrl: root + 'demo/table/table.html' + version,
             controller: 'tableCtrl',
@@ -129,7 +129,7 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
             }
         })
         //echart表格示例
-        .state('echart', {
+        .state('monitor-web.echart', {
             url: '/echart',
             templateUrl: root + 'demo/echart/echart.html' + version,
             controller: 'echartCtrl',
@@ -146,7 +146,7 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
             }
         })
         //页面绑定中间件数据
-        .state('autoBind', {
+        .state('monitor-web.autoBind', {
             url: '/autoBind',
             templateUrl: root + 'demo/autoBind/autoBind.html' + version,
             controller: 'autoBindCtrl',
@@ -164,7 +164,7 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
             }
         })
         //按钮示例
-        .state('button', {
+        .state('monitor-web.button', {
             url: '/button',
             templateUrl: root + 'demo/button/button.html' + version,
             controller: 'buttonCtrl',
@@ -182,7 +182,7 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
             }
         })
         //按钮示例
-        .state('checkbox', {
+        .state('monitor-web.checkbox', {
             url: '/checkbox',
             templateUrl: root + 'demo/checkbox/checkbox.html' + version,
             controller: 'checkboxCtrl',
@@ -199,7 +199,7 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
                 }]
             }
         })
-        .state('datePicker', {
+        .state('monitor-web.datePicker', {
             url: '/datePicker',
             templateUrl: root + 'demo/datePicker/datePicker.html' + version,
             controller: 'datePickerCtrl',
@@ -216,7 +216,7 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
                 }]
             }
         })
-        .state('dialog', {
+        .state('monitor-web.dialog', {
             url: '/dialog',
             templateUrl: root + 'demo/dialog/dialog.html' + version,
             controller: 'dialogCtrl',
@@ -233,7 +233,7 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
                 }]
             }
         })
-        .state('divContainer', {
+        .state('monitor-web.divContainer', {
             url: '/divContainer',
             templateUrl: root + 'demo/divContainer/divContainer.html' + version,
             controller: 'divContainerCtrl',
@@ -250,7 +250,7 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
                 }]
             }
         })
-        .state('input_select', {
+        .state('monitor-web.input_select', {
             url: '/input_select',
             templateUrl: root + 'demo/input_select/input_select.html' + version,
             controller: 'input_selectCtrl',
@@ -267,11 +267,79 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
                 }]
             }
         })
+        .state('monitor-web.SendTag', {
+            url: '/SendTag',
+            templateUrl: root + 'demo/pcdp/SendTag.html' + version,
+            controller: 'SendTagCtrl',
+            title: "SendTag",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "SendTag",
+                        files: [
+                            root + "demo/pcdp/SendTagCtrl.js" + version,
+                            root + "demo/demo.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
+        .state('monitor-web.SendMessage', {
+            url: '/SendMessage',
+            templateUrl: root + 'demo/pcdp/SendMessage.html' + version,
+            controller: 'SendMessageCtrl',
+            title: "SendMessage",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "SendMessage",
+                        files: [
+                            root + "demo/pcdp/SendMessageCtrl.js" + version,
+                            root + "demo/demo.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
+        .state('monitor-web.GetHmiParam', {
+            url: '/GetHmiParam',
+            templateUrl: root + 'demo/pcdp/GetHmiParam.html' + version,
+            controller: 'GetHmiParamCtrl',
+            title: "GetHmiParam",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "GetHmiParam",
+                        files: [
+                            root + "demo/pcdp/GetHmiParamCtrl.js" + version,
+                            root + "demo/demo.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
+        .state('monitor-web.SendHmiParam', {
+            url: '/SendHmiParam',
+            templateUrl: root + 'demo/pcdp/SendHmiParam.html' + version,
+            controller: 'SendHmiParamCtrl',
+            title: "SendHmiParam",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "SendHmiParam",
+                        files: [
+                            root + "demo/pcdp/SendHmiParamCtrl.js" + version,
+                            root + "demo/demo.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
     ;
 
 
 
 
-    $urlRouterProvider.otherwise('/table');
+    $urlRouterProvider.otherwise('/login');
     $httpProvider.interceptors.push('httpInterceptor');
 });

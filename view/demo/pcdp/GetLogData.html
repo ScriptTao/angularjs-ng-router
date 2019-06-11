@@ -1,0 +1,20 @@
+<div class="GetLogData demoCt">
+        <h1>GetLogData</h1>
+        <p>代码：</p>
+        <pre>
+        <code>
+monitor.controller('GetLogDataCtrl', function ($scope, $state, $stateParams, ngDialog , $interval,sendTag,SendMessage,GetLogData) {
+    var data = {
+        "startTime": "",
+        "endTime": "",
+        "keyword": "",
+        "count": 3
+    };
+    GetLogData.save(data, function (response) {
+        console.log(response);
+    });
+
+})
+        </code>
+    </pre>
+</div>
