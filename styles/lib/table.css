@@ -182,7 +182,7 @@
   display: inline-block;
   text-align: right;
   color: #333333;
-  margin-right: 3px;
+  margin-right: 6px;
 }
 .header_box .group_box .form_group input {
   padding: 2px 8px;
@@ -241,7 +241,6 @@
 }
 .body_box .table_box table tbody tr {
   cursor: pointer;
-  height: 35px;
 }
 .body_box .table_box table tbody tr:hover {
   background-color: #dcdff3 !important;

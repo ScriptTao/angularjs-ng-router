@@ -44,6 +44,7 @@ monitor.controller('navigationCtrl', function ($scope, $state, $stateParams, ngD
     $scope.queryTwo = function (item) {
         $scope.param.oneStyle = item.menu_name
         $scope.twoList = item.children;
+        fa_fn()
     };
     //退出登录
     $scope.logout = function () {

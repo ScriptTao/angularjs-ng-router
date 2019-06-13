@@ -97,6 +97,71 @@ function HMICallBack(val,callback) {
         }
         old = val.data.tagList[0].value
     }
+}
 
+function fa_fn() {
+    var fatime = setInterval(function () {
+      if($('.two_b').length > 0 ){
+          clearInterval(fatime)
+          let falist = $('.two_b')
+          for(var i = 0; i < falist.length; i++){
+              switch(i) {
+                  case 0:
+                      falist.eq(i).find('i').addClass('fa-paste')
+                      break;
+                  case 1:
+                      falist.eq(i).find('i').addClass('fa-list')
+                      break;
+                  case 2:
+                      falist.eq(i).find('i').addClass('fa-rotate-left')
+                      break;
+                  case 3:
+                      falist.eq(i).find('i').addClass('fa-bar-chart-o ')
+                      break;
+                  case 4:
+                      falist.eq(i).find('i').addClass('fa-pie-chart')
+                      break;
+                  case 5:
+                      falist.eq(i).find('i').addClass('fa-ils')
+                      break;
+                  case 6:
+                      falist.eq(i).find('i').addClass('fa-align-right')
+                      break;
+                  case 7:
+                      falist.eq(i).find('i').addClass('fa-file-text')
+                      break;
+                  case 8:
+                      falist.eq(i).find('i').addClass('fa-television')
+                      break;
+                  case 9:
+                      falist.eq(i).find('i').addClass('fa-tags')
+                      break;
+                  case 10:
+                      falist.eq(i).find('i').addClass('fa-futbol-o')
+                      break;
+                  case 11:
+                      falist.eq(i).find('i').addClass('fa-paper-plane')
+                      break;
+                  case 12:
+                      falist.eq(i).find('i').addClass('fa-id-card-o')
+                      break;
+                  case 13:
+                      falist.eq(i).find('i').addClass('fa-window-restore')
+                      break;
+                  case 14:
+                      falist.eq(i).find('i').addClass('fa-picture-o')
+                      break;
+                  case 15:
+                      falist.eq(i).find('i').addClass('fa-desktop')
+                      break;
+                  case 16:
+                      falist.eq(i).find('i').addClass('fa-star-o')
+                      break;
+                  default:
+                      falist.eq(i).find('i').addClass('fa-eraser')
+              }
+          }
+      }
+    },10)
 }
 

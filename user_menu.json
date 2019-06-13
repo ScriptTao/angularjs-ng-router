@@ -22,6 +22,16 @@
     "password": "test",
     "menu": [
       {
+        "menu_name": "主画面",
+        "menu_url": "",
+        "children": [
+          {
+            "menu_name": "主画面",
+            "menu_url": "main"
+          }
+        ]
+      },
+      {
         "menu_name": "示例",
         "menu_url": "",
         "children": [
@@ -80,6 +90,18 @@
           {
             "menu_name": "SendTag",
             "menu_url": "SendTag"
+          },
+          {
+            "menu_name": "测试画面",
+            "menu_url": ""
+          },
+          {
+            "menu_name": "测试画面",
+            "menu_url": ""
+          },
+          {
+            "menu_name": "测试画面",
+            "menu_url": ""
           }
         ]
       },
