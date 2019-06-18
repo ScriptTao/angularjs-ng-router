@@ -38,7 +38,7 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
             }
         })
         //自定义接口
-        .state('customSql', {
+        .state('monitor-web.customSql', {
             url: '/customSql',
             templateUrl: root + 'config/customSql.html' + version,
             controller: 'customSqlCtrl',
@@ -74,7 +74,7 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
             }
         })
         //配置页面
-        .state('userConfig', {
+        .state('monitor-web.userConfig', {
             url: '/userConfig',
             templateUrl: root + 'config/userConfig.html' + version,
             controller: 'userConfigCtrl',

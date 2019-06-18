@@ -1,7 +1,7 @@
 /**
  * Created by 脚本 on 2019/6/11.
  */
-monitor.controller('SendMessageCtrl', function ($scope, $state, $stateParams, ngDialog , $interval,sendTag,SendMessage) {
+monitor.controller('SendMessageCtrl', function ($scope, $state, $stateParams, ngDialog , $interval,SendMessage) {
     SendMessage.save({
         "id": "msg",
         "timeout": 3,

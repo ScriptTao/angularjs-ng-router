@@ -1,16 +1,20 @@
 [
   {
-    "name": "李四",
+    "name": "管理员",
     "account": "admin",
     "password": "123456",
     "menu": [
       {
-        "menu_name": "",
+        "menu_name": "权限配置",
         "menu_url": "",
         "children": [
           {
-            "menu_name": "",
-            "menu_url": ""
+            "menu_name": "自定义sql",
+            "menu_url": "customSql"
+          },
+          {
+            "menu_name": "权限配置",
+            "menu_url": "userConfig"
           }
         ]
       }
@@ -106,200 +110,12 @@
         ]
       },
       {
-        "menu_name": "示例1",
+        "menu_name": "权限配置",
         "menu_url": "",
         "children": [
           {
-            "menu_name": "绑定变量1",
-            "menu_url": "autoBind1"
-          },
-          {
-            "menu_name": "按钮1",
-            "menu_url": "button1"
-          },
-          {
-            "menu_name": "弹窗1",
-            "menu_url": "dialog1"
-          },
-          {
-            "menu_name": "单选框1",
-            "menu_url": "checkbox1"
-          },
-          {
-            "menu_name": "日期选择1",
-            "menu_url": "datePicker1"
-          },
-          {
-            "menu_name": "div布局1",
-            "menu_url": "divContainer1"
-          }
-        ]
-      },
-      {
-        "menu_name": "示例2",
-        "menu_url": "",
-        "children": [
-          {
-            "menu_name": "绑定变量2",
-            "menu_url": "autoBind2"
-          },
-          {
-            "menu_name": "按钮2",
-            "menu_url": "button2"
-          },
-          {
-            "menu_name": "弹窗2",
-            "menu_url": "dialog2"
-          },
-          {
-            "menu_name": "单选框2",
-            "menu_url": "checkbox2"
-          },
-          {
-            "menu_name": "日期选择2",
-            "menu_url": "datePicker2"
-          },
-          {
-            "menu_name": "div布局2",
-            "menu_url": "divContainer2"
-          },
-          {
-            "menu_name": "数据可视化2",
-            "menu_url": "echart2"
-          },
-          {
-            "menu_name": "输入框下拉框2",
-            "menu_url": "input_select2"
-          },
-          {
-            "menu_name": "页面基本结构2",
-            "menu_url": "table2"
-          }
-        ]
-      },
-      {
-        "menu_name": "示例3",
-        "menu_url": "",
-        "children": [
-          {
-            "menu_name": "绑定变量3",
-            "menu_url": "autoBind3"
-          },
-          {
-            "menu_name": "按钮3",
-            "menu_url": "button3"
-          },
-          {
-            "menu_name": "弹窗3",
-            "menu_url": "dialog3"
-          },
-          {
-            "menu_name": "单选框3",
-            "menu_url": "checkbox3"
-          },
-          {
-            "menu_name": "日期选择3",
-            "menu_url": "datePicker"
-          },
-          {
-            "menu_name": "div布局3",
-            "menu_url": "divContainer3"
-          },
-          {
-            "menu_name": "数据可视化3",
-            "menu_url": "echar3t"
-          },
-          {
-            "menu_name": "输入框下拉框3",
-            "menu_url": "input_select3"
-          },
-          {
-            "menu_name": "页面基本结构3",
-            "menu_url": "table3"
-          }
-        ]
-      },
-      {
-        "menu_name": "示例4",
-        "menu_url": "",
-        "children": [
-          {
-            "menu_name": "绑定变量4",
-            "menu_url": "autoBind4"
-          },
-          {
-            "menu_name": "按钮4",
-            "menu_url": "button4"
-          },
-          {
-            "menu_name": "弹窗4",
-            "menu_url": "dialog4"
-          },
-          {
-            "menu_name": "单选框4",
-            "menu_url": "checkbox4"
-          },
-          {
-            "menu_name": "日期选择4",
-            "menu_url": "datePicker4"
-          },
-          {
-            "menu_name": "div布局4",
-            "menu_url": "divContainer4"
-          },
-          {
-            "menu_name": "数据可视化4",
-            "menu_url": "echart4"
-          },
-          {
-            "menu_name": "输入框下拉框4",
-            "menu_url": "input_select4"
-          },
-          {
-            "menu_name": "页面基本结构4",
-            "menu_url": "table4"
-          }
-        ]
-      },
-      {
-        "menu_name": "示例5",
-        "menu_url": "",
-        "children": [
-          {
-            "menu_name": "绑定变量5",
-            "menu_url": "autoBind5"
-          },
-          {
-            "menu_name": "按钮5",
-            "menu_url": "button5"
-          },
-          {
-            "menu_name": "弹窗5",
-            "menu_url": "dialog5"
-          },
-          {
-            "menu_name": "单选框5",
-            "menu_url": "checkbox5"
-          },
-          {
-            "menu_name": "日期选择5",
-            "menu_url": "datePicker5"
-          },
-          {
-            "menu_name": "div布局5",
-            "menu_url": "divContainer5"
-          },
-          {
-            "menu_name": "数据可视化5",
-            "menu_url": "echart5"
-          },
-          {
-            "menu_name": "输入框下拉框5",
-            "menu_url": "input_select5"
-          },
-          {
-            "menu_name": "页面基本结构5",
-            "menu_url": "table5"
+            "menu_name": "自定义sql",
+            "menu_url": "customSql"
           }
         ]
       }
