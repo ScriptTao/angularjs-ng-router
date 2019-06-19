@@ -26,6 +26,86 @@
 
 
 
+    <p>整体效果展示: </p>
+    <div class="header_box">
+        <div class="group_box">
+            <div class="form_group">
+                <label for="">请选择时间</label>
+                <input type="text" onchange="" ng-model="subdataTime"
+                       onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',isShowClear:true});">
+            </div>
+
+            <div class="form_group">
+                <label for="">轧辊类型</label>
+                <select ng-model="params.sex">
+                    <option value="">请选择</option>
+                    <option ng-repeat="item in responseList" value="{{item.key}}">{{item.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="query_box">
+            <button ng-click="test()" class="btn querybtn">查询</button>
+            <button class="btn querybtn_all">查看全部</button>
+            <button class="btn querybtn_all">重置</button>
+        </div>
+    </div>
+    <div class="body_box">
+        <div class="table_box">
+            <table>
+                <thead>
+                <tr>
+                    <th>轧辊编号</th>
+                    <th>轧辊类型</th>
+                    <th>轧辊状态</th>
+                    <th>机架号</th>
+                    <th>轧辊位置</th>
+                    <th>配对棍号</th>
+                    <th>配对时间</th>
+                    <th>操作侧轴承箱号</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in [1,2,3,4,5]">
+                    <td>0035</td>
+                    <td>工作轴</td>
+                    <td>上机</td>
+                    <td>R</td>
+                    <td>上</td>
+                    <td>0036</td>
+                    <td>2019-12-19 17:26:12</td>
+                    <td>s-318</td>
+                    <td>
+                        <button class="plb_ch sub">修改</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer_box">
+        <div class="footer_group">
+            <div class="footer_group_item">
+                <label for="">轴承号</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">轴承类型</label>
+                <input type="text">
+            </div>
+            <div class="footer_group_item">
+                <label for="">对应机架号</label>
+                <input type="text">
+            </div>
+        </div>
+        <div class="footer_group_btn">
+            <button>导出</button>
+            <button>添加</button>
+            <button>修改</button>
+            <button>删除</button>
+        </div>
+    </div>
+    <p>局部效果展示及示例: </p>
     <span>搜索查询示例：</span>
     <div class="header_box">
         <div class="group_box">
@@ -104,7 +184,7 @@
                     <td>2019-12-19 17:26:12</td>
                     <td>s-318</td>
                     <td>
-                        <button class="plb_ch sub">修改<i class="fa fa-eyedropper"></i></button>
+                        <button class="plb_ch sub">修改</button>
                     </td>
                 </tr>
                 </tbody>

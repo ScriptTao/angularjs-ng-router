@@ -233,6 +233,23 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
                 }]
             }
         })
+        .state('monitor-web.tableSample', {
+            url: '/tableSample',
+            templateUrl: root + 'demo/tableSample/tableSample.html' + version,
+            controller: 'tableSampleCtrl',
+            title: "table",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "table",
+                        files: [
+                            root + "demo/tableSample/tableSampleCtrl.js" + version,
+                            root + "demo/demo.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
         .state('monitor-web.divContainer', {
             url: '/divContainer',
             templateUrl: root + 'demo/divContainer/divContainer.html' + version,
@@ -267,68 +284,52 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
                 }]
             }
         })
-        .state('monitor-web.SendTag', {
-            url: '/SendTag',
-            templateUrl: root + 'demo/pcdp/SendTag.html' + version,
-            controller: 'SendTagCtrl',
-            title: "SendTag",
+
+        .state('monitor-web.pcdp', {
+            url: '/pcdp',
+            templateUrl: root + 'demo/pcdp/pcdp.html' + version,
+            controller: 'pcdpCtrl',
+            title: "pcdp",
             resolve: {
                 loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
-                        name: "SendTag",
+                        name: "pcdp",
                         files: [
-                            root + "demo/pcdp/SendTagCtrl.js" + version,
+                            root + "demo/pcdp/pcdpCtrl.js" + version,
                             root + "demo/demo.css" + version,
                         ]
                     })
                 }]
             }
         })
-        .state('monitor-web.SendMessage', {
-            url: '/SendMessage',
-            templateUrl: root + 'demo/pcdp/SendMessage.html' + version,
-            controller: 'SendMessageCtrl',
-            title: "SendMessage",
+        .state('monitor-web.pcdpSample', {
+            url: '/pcdpSample',
+            templateUrl: root + 'demo/pcdp/pcdpSample.html' + version,
+            controller: 'pcdpSampleCtrl',
+            title: "pcdpSample",
             resolve: {
                 loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
-                        name: "SendMessage",
+                        name: "pcdpSample",
                         files: [
-                            root + "demo/pcdp/SendMessageCtrl.js" + version,
+                            root + "demo/pcdp/pcdpSampleCtrl.js" + version,
                             root + "demo/demo.css" + version,
                         ]
                     })
                 }]
             }
         })
-        .state('monitor-web.GetHmiParam', {
-            url: '/GetHmiParam',
-            templateUrl: root + 'demo/pcdp/GetHmiParam.html' + version,
-            controller: 'GetHmiParamCtrl',
-            title: "GetHmiParam",
+        .state('monitor-web.db', {
+            url: '/db',
+            templateUrl: root + 'demo/db/db.html' + version,
+            controller: 'dbCtrl',
+            title: "db",
             resolve: {
                 loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
                     return $ocLazyLoad.load({
-                        name: "GetHmiParam",
+                        name: "db",
                         files: [
-                            root + "demo/pcdp/GetHmiParamCtrl.js" + version,
-                            root + "demo/demo.css" + version,
-                        ]
-                    })
-                }]
-            }
-        })
-        .state('monitor-web.SendHmiParam', {
-            url: '/SendHmiParam',
-            templateUrl: root + 'demo/pcdp/SendHmiParam.html' + version,
-            controller: 'SendHmiParamCtrl',
-            title: "SendHmiParam",
-            resolve: {
-                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
-                    return $ocLazyLoad.load({
-                        name: "SendHmiParam",
-                        files: [
-                            root + "demo/pcdp/SendHmiParamCtrl.js" + version,
+                            root + "demo/db/dbCtrl.js" + version,
                             root + "demo/demo.css" + version,
                         ]
                     })

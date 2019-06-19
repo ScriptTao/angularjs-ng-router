@@ -1,0 +1,235 @@
+<div class="tableSample">
+    <div class="divContainer demoCt">
+        <h1>表格数据绑定及获取</h1>
+        <p>示例：</p>
+        <span></span>
+        <div class="body_box">
+            <div class="table_box">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>轧辊编号</th>
+                        <th>轧辊类型</th>
+                        <th>轧辊状态</th>
+                        <th>机架号</th>
+                        <th>轧辊位置</th>
+                        <th>配对棍号</th>
+                        <th>配对时间</th>
+                        <th>侧轴承箱号</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-click="getDetails(item)" ng-repeat="item in itemList">
+                        <td>{{item.code}}</td>
+                        <td>{{item.type}}</td>
+                        <td>{{item.status}}</td>
+                        <td>{{item.num}}</td>
+                        <td>{{item.pos}}</td>
+                        <td>{{item.gunNum}}</td>
+                        <td>{{item.time}}</td>
+                        <td>{{item.xNum}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <p>代码：</p>
+        <pre>
+            <code>
+                &lt;div class="body_box">
+                    &lt;div class="table_box">
+                        &lt;table>
+                            &lt;thead>
+                                 &lt;tr>
+                                    &lt;th>轧辊编号&lt;/th>
+                                    &lt;th>轧辊类型&lt;/th>
+                                    &lt;th>轧辊状态&lt;/th>
+                                    &lt;th>机架号&lt;/th>
+                                    &lt;th>轧辊位置&lt;/th>
+                                    &lt;th>配对棍号&lt;/th>
+                                    &lt;th>配对时间&lt;/th>
+                                    &lt;th>侧轴承箱号&lt;/th>
+                                &lt;/tr>
+                            &lt;/thead>
+                            &lt;tbody>
+                                &lt;tr ng-click="getDetails(item)" ng-repeat="item in itemList">
+                                    &lt;td>{ &nbsp;{item.code}}&lt;/td>
+                                    &lt;td>{ &nbsp;{item.type}}&lt;/td>
+                                    &lt;td>{ &nbsp;{item.status}}&lt;/td>
+                                    &lt;td>{ &nbsp;{item.num}}&lt;/td>
+                                    &lt;td>{ &nbsp;{item.pos}}&lt;/td>
+                                    &lt;td>{ &nbsp;{item.gunNum}}&lt;/td>
+                                    &lt;td>{ &nbsp;{item.time}}&lt;/td>
+                                    &lt;td>{ &nbsp;{item.xNum}}&lt;/td>
+                                &lt;/tr>
+                            &lt;/tbody>
+                        &lt;/table>
+                    &lt;/div>
+                &lt;/div>
+            </code>
+        </pre>
+
+        <span>底部内容示例：</span>
+        <div class="footer_box">
+            <div class="footer_group">
+                <div class="footer_group_item">
+                    <label for="">轧辊编号</label>
+                    <input type="text" ng-model="params.code">
+                </div>
+                <div class="footer_group_item">
+                    <label for="">轧辊类型</label>
+                    <input type="text" ng-model="params.status">
+                </div>
+                <div class="footer_group_item">
+                    <label for="">轧辊状态</label>
+                    <input type="text" ng-model="params.type">
+                </div>
+                <div class="footer_group_item">
+                    <label for="">机架号</label>
+                    <input type="text" ng-model="params.num">
+                </div>
+                <div class="footer_group_item">
+                    <label for="">轧辊位置</label>
+                    <input type="text" ng-model="params.pos">
+                </div>
+                <div class="footer_group_item">
+                    <label for="">配对棍号</label>
+                    <input type="text" ng-model="params.gunNum">
+                </div>
+                <div class="footer_group_item">
+                    <label for="">配对时间</label>
+                    <input type="text" ng-model="params.time">
+                </div>
+                <div class="footer_group_item">
+                    <label for="">侧轴承箱号</label>
+                    <input type="text" ng-model="params.xNum">
+                </div>
+            </div>
+
+        </div>
+        <p>代码：</p>
+        <pre>
+            <code>
+                &lt;div class="footer_box">
+                    &lt;div class="footer_group">
+                    &lt;div class="footer_group_item"  >
+                    &lt;label for="">轧辊编号&lt;/label>
+                    &lt;input type="text" ng-model="params.code">
+                &lt;/div>
+                    &lt;div class="footer_group_item">
+                    &lt;label for="">轧辊类型&lt;/label>
+                    &lt;input type="text" ng-model="params.status">
+                &lt;/div>
+                    &lt;div class="footer_group_item">
+                    &lt;label for="">轧辊状态&lt;/label>
+                    &lt;input type="text" ng-model="params.type">
+                &lt;/div>
+                    &lt;div class="footer_group_item">
+                    &lt;label for="">机架号&lt;/label>
+                    &lt;input type="text" ng-model="params.num">
+                &lt;/div>
+                    &lt;div class="footer_group_item">
+                    &lt;label for="">轧辊位置&lt;/label>
+                    &lt;input type="text" ng-model="params.pos">
+                &lt;/div>
+                    &lt;div class="footer_group_item">
+                    &lt;label for="">配对棍号&lt;/label>
+                    &lt;input type="text" ng-model="params.gunNum">
+                &lt;/div>
+                    &lt;div class="footer_group_item">
+                    &lt;label for="">配对时间&lt;/label>
+                    &lt;input type="text" ng-model="params.time">
+                &lt;/div>
+                    &lt;div class="footer_group_item">
+                    &lt;label for="">侧轴承箱号&lt;/label>
+                    &lt;input type="text" ng-model="params.xNum">
+                &lt;/div>
+            &lt;/div>
+                &lt;/div>
+            </code>
+        </pre>
+
+        <p>JS代码</p>
+        <pre>
+            <code>
+                monitor.controller('tableSampleCtrl', function ($scope, $state, $stateParams, ngDialog, $interval, $timeout) {
+    $scope.itemList = [
+        {
+            code: "20190816",
+            type: "类型1",
+            status: "状态1",
+            num: "机架号1",
+            pos: "位置1",
+            gunNum: "辊号1",
+            time: "时间1",
+            xNum: "箱号1"
+        },
+        {
+            code: "20190816",
+            type: "类型2",
+            status: "状态2",
+            num: "机架号2",
+            pos: "位置2",
+            gunNum: "辊号2",
+            time: "时间2",
+            xNum: "箱号2"
+        },
+        {
+            code: "20190816",
+            type: "类型3",
+            status: "状态3",
+            num: "机架号3",
+            pos: "位置3",
+            gunNum: "辊号3",
+            time: "时间3",
+            xNum: "箱号3"
+        },
+        {
+            code: "20190816",
+            type: "类型4",
+            status: "状态4",
+            num: "机架号4",
+            pos: "位置4",
+            gunNum: "辊号4",
+            time: "时间4",
+            xNum: "箱号4"
+        },
+        {
+            code: "20190816",
+            type: "类型5",
+            status: "状态5",
+            num: "机架号5",
+            pos: "位置5",
+            gunNum: "辊号5",
+            time: "时间5",
+            xNum: "箱号5"
+        },
+    ];
+
+    $scope.params = {
+        code: "",
+        status: "",
+        type: "",
+        num: "",
+        pos: "",
+        gunNum: "",
+        time: "",
+        xNum: "",
+    }
+    $scope.getDetails = function (item) {
+        alert(item.code+','+item.status+','+item.type+','+item.num+','+item.pos+'等等');
+        $scope.params.code = item.code;
+        $scope.params.status = item.status;
+        $scope.params.type = item.type;
+        $scope.params.num = item.num;
+        $scope.params.pos = item.pos;
+        $scope.params.gunNum = item.gunNum;
+        $scope.params.time = item.time;
+        $scope.params.xNum = item.xNum;
+    }
+})
+            </code>
+        </pre>
+    </div>
+</div>

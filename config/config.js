@@ -1,5 +1,5 @@
-const IP = 'http://127.0.0.1:8089/';
-// const IP = 'http://172.20.10.2:8089/';
+// const IP = 'http://127.0.0.1:8089/';
+const IP = 'http://172.20.10.4:8089/';
 
 
 const MENU_LIST = [
@@ -65,6 +65,10 @@ const MENU_LIST = [
                 menu_url: "divContainer",
             },
             {
+                menu_name: "table",
+                menu_url: "tableSample",
+            },
+            {
                 menu_name: "数据可视化",
                 menu_url: "echart",
             },
@@ -77,25 +81,17 @@ const MENU_LIST = [
                 menu_url: "table",
             },
             {
-                menu_name: "GetHmiParam",
-                menu_url: "GetHmiParam",
+                menu_name: "中间件功能展示",
+                menu_url: "pcdp",
             },
             {
-                menu_name: "GetLogData",
-                menu_url: "GetLogData",
+                menu_name: "数据库功能展示",
+                menu_url: "db",
             },
             {
-                menu_name: "SendHmiParam",
-                menu_url: "SendHmiParam",
-            },
-            {
-                menu_name: "SendMessage",
-                menu_url: "SendMessage",
-            },
-            {
-                menu_name: "SendTag",
-                menu_url: "SendTag",
-            },
+                menu_name: "中间件数据绑定演示",
+                menu_url: "pcdpSample",
+            }
         ]
     },
 ];

@@ -1,0 +1,57 @@
+<div class="db demoCt">
+    <h1>数据库功能展示</h1>
+    <p>示例</p>
+    <table style="border: 1px solid red;">
+        <tbody>
+            <tr ng-repeat="item in exuser_val">
+                <td style="border-right: 1px solid red">{{item.ACCOUNT}}</td>&nbsp;
+                <td style="border-right: 1px solid red">{{item.AREA}}</td>&nbsp;
+                <td style="border-right: 1px solid red">{{item.AREAID}}</td>&nbsp;
+                <td style="border-right: 1px solid red">{{item.CREATETIME}}</td>&nbsp;
+                <td style="border-right: 1px solid red">{{item.MODINAME}}</td>&nbsp;
+                <td style="border-right: 1px solid red">{{item.SNAME}}</td>&nbsp;
+                <td style="border-right: 1px solid red">{{item.MODITIME}}</td>&nbsp;
+            </tr>
+        </tbody>
+    </table>
+    <p>代码</p>
+    <span>HTML</span>
+    <pre>
+        <code>
+            &lt;table>
+        &lt;tbody>
+            &lt;tr ng-repeat="item in exuser_val">
+                &lt;td>{ {item.ACCOUNT}}&lt;/td>
+                &lt;td>{ {item.AREA}}&lt;/td>
+                &lt;td>{ {item.AREAID}}&lt;/td>
+                &lt;td>{ {item.CREATETIME}}&lt;/td>
+                &lt;td>{ {item.MODINAME}}&lt;/td>
+                &lt;td>{ {item.SNAME}}&lt;/td>
+                &lt;td>{ {item.MODITIME}}&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+    &lt;/table>
+        </code>
+    </pre>
+    <span>JS</span>
+    <pre>
+        <code>
+            monitor.controller('dbCtrl', function ($scope, $state, $stateParams, ngDialog , $interval,GetHmiParam,GetLogData,SendMessage,SendTag,GetLogData, commonFindData
+) {
+
+    commonFindData.save({
+        key: "exuser",
+        list: [
+            {'@account': "\'测试\'"}//注意 需要用 "\'测试\'" 这种数据格式
+        ]
+    }, function (res) {
+        if(res.status == 2000){
+            $scope.exuser_val = res.data
+        }
+    })
+
+})
+
+        </code>
+    </pre>
+</div>

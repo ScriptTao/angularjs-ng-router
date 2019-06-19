@@ -1,0 +1,59 @@
+<div class="pcdpSample demoCt">
+    <h1>中间件变量获取与绑定</h1>
+    <p>示例</p>
+    <span>数据集变量绑定</span>
+    <table>
+        <tbody>
+            <tr ng-repeat="item in cut_info_list">
+                <td>{{item.Counter}}</td>
+                <td>{{item.SlabId}}</td>
+                <td>{{item.SlabIdPrint1}}</td>
+                <td>{{item.SlabIdPrint2}}</td>
+                <td>{{item.SlabLen}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <span>非数据集变量绑定</span>
+    <span>{{asd213_val}}</span>
+    <p>代码:</p>
+    <span>HTML</span>
+    <pre>
+        <code>
+            &lt;table>
+        &lt;tbody>
+            &lt;tr ng-repeat="item in cut_info_list">
+                &lt;td>{&nbsp;{item.Counter}}&lt;/td><!--复制完应是{{params.inp}}大括号紧贴-->
+                &lt;td>{&nbsp;{item.SlabId}}&lt;/td>
+                &lt;td>{&nbsp;{item.SlabIdPrint1}}&lt;/td>
+                &lt;td>{&nbsp;{item.SlabIdPrint2}}&lt;/td>
+                &lt;td>{&nbsp;{item.SlabLen}}&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+    &lt;/table>
+
+             &lt;span>{&nbsp;{asd213_val}}&lt;/span>
+        </code>
+    </pre>
+    <span>JS</span>
+    <pre>
+        <code>
+            monitor.controller('pcdpSampleCtrl', function ($scope, $state, $stateParams, ngDialog , $interval,GetHmiParam,GetLogData,SendMessage,SendTag,GetLogData
+                                               ,commonFindData,GetHmiData
+) {
+    GetHmiParam.save({
+        tag_list: "Cut_Info,asd213"
+    },function (res) {
+        console.log(res);
+        if(res.code == 2002){
+            $scope.cut_info_list = res.data[0].dataList;//数据集变量
+            $scope.asd213_val = res.data[1].value;//非数据集变量
+        }
+    })
+
+
+})
+
+        </code>
+    </pre>
+</div>

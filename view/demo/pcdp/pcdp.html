@@ -1,0 +1,71 @@
+<div class="pcdp demoCt">
+    <h1>中间件功能展示: </h1>
+    <p>GetHmiParam</p>
+    <span>获取中间件变量值</span>
+    <pre>
+        <code>
+            GetHmiParam.save({
+                  tag_list: "Cut_Info,asd213"
+            },function (res) {
+                  console.log(res);
+            })
+        </code>
+    </pre>
+
+
+<p>GetLogData</p>
+<span>获取中间件日志信息</span>
+<pre>
+        <code>
+            var data = {
+        "startTime": "",
+        "endTime": "",
+        "keyword": "",
+        "count": 3
+    };
+    GetLogData.save(data, function (response) {
+        console.log(response);
+    });
+        </code>
+    </pre>
+<p>SendTag</p>
+<span>修改中间件变量值</span>
+<pre>
+        <code>
+             var tags = [
+        {
+            "name": "asd213",
+            "value": "test"
+        },
+    ];
+    sendTag(tags, function (response) {
+        console.log(response);
+    });
+        </code>
+    </pre>
+
+
+<p>SendMessage</p>
+<span>向中间件发送消息</span>
+<pre>
+        <code>
+         SendMessage.save({
+        "id": "msg",
+        "timeout": 3,
+        "reply": true,
+        "data": [
+            {
+                "x": "1",
+                "y": "2"
+            },
+            {
+                "x": "3",
+                "y": "4"
+            }
+        ]
+    },function (res) {
+        console.log(res);
+    })
+        </code>
+    </pre>
+</div>
