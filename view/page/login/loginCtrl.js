@@ -39,7 +39,7 @@ monitor.controller('loginCtrl', function ($scope, $state, $stateParams, ngDialog
             dataType: "json",
             success: function (data) {
                 for(var i = 0; i < data.length; i++){
-                    if(data[i].name == $scope.param.userName && data[i].password == $scope.param.passWord){
+                    if(data[i].account == $scope.param.userName && data[i].password == $scope.param.passWord){
                         localStorage.setItem("userInfo",JSON.stringify(data[i]));
                         alert("登录成功")
 
