@@ -138,7 +138,7 @@ monitor.controller('customSqlCtrl', function ($scope, $state, $stateParams, ngDi
                 };
             }],
             className: 'ngdialog-theme-default ngdialog-theme-custom',
-            width: 400,
+            width: 500,
             overlay: true
         });
     };

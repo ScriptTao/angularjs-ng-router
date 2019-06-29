@@ -1,10 +1,7 @@
 monitor.controller("mainCtrl", function ($scope, ngDialog, $state, $location, $interval
     , GetHmiData, SendTag, SendHmiParam) {
     $scope.projectName = PROJECTNAME;
-
-
     //
-
     /*
     * _api  String 接口名称
     * _api_param Object 请求参数
@@ -94,12 +91,13 @@ monitor.controller("mainCtrl", function ($scope, ngDialog, $state, $location, $i
     var timer = $interval(function () {
         if ($("div").length != 0) {
             $scope.getDataTag();
-            $interval.cancel(timer);
+            // $interval.cancel(timer);//打开定时器
         }
     }, 5000);
     $scope.getDataTag();
     $scope._v = "";
-    setTimeout(function () {
+    /*关闭双向功能*/
+    /*setTimeout(function () {
         $(document).find("[data-tag]").each(function (i, item) {
             $(item).on({
                 dblclick: function () {
@@ -128,7 +126,7 @@ monitor.controller("mainCtrl", function ($scope, ngDialog, $state, $location, $i
                 }
             })
         })
-    }, 1000);
+    }, 1000);*/
 
 
     $scope.setTime = 3000;

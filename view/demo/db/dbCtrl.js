@@ -1,10 +1,11 @@
 monitor.controller('dbCtrl', function ($scope, $state, $stateParams, ngDialog , $interval,GetHmiParam,GetLogData,SendMessage,SendTag,GetLogData, commonFindData
 ) {
-    $scope.ss = 'tsw'
+    $scope.ss = 'admin'
     commonFindData.save({
-        key:"testss",
+        key:"tests",
         list:[
             {
+                // '@tsw': "\'admin\'"
                 //变量形式
                 '@tsw':"'"+$scope.ss+"'"
                 //死值字符串形式
@@ -12,6 +13,6 @@ monitor.controller('dbCtrl', function ($scope, $state, $stateParams, ngDialog , 
             }
         ]
     },function (res) {
-
+        console.log(res.data[0].PASSWORD)
     })
 })

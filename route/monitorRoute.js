@@ -337,10 +337,6 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
             }
         })
     ;
-
-
-
-
     $urlRouterProvider.otherwise('/login');
     $httpProvider.interceptors.push('httpInterceptor');
 });
