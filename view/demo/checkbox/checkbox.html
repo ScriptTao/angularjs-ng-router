@@ -1,9 +1,70 @@
 <div class="checkbox demoCt">
-    <h1>单选框读取值</h1>
-    <p>示例：</p>
-    <input ng-model="params.checkbox1" type="checkbox">单选1 <br>
-    <input ng-model="params.checkbox2" type="checkbox">单选2 <br>
-    <input ng-model="params.checkbox3" type="checkbox">单选3 <br>
+    <h1>单选/多选框读取值</h1>
+    <p>单选示例</p>
+    <input type="radio" ng-value="1" name="danxuan" ng-model="params.radio">单选1 <br>
+    <input type="radio" ng-value="2" name="danxuan" ng-model="params.radio">单选2 <br>
+    <input type="radio" ng-value="3" name="danxuan" ng-model="params.radio">单选3 <br>
+    <div>选中的值为:{{params.radio}}</div>
+    <button ng-click="radioFn()">获取选中项</button>
+    <button ng-click="radio3Fn()">设置3选中</button>
+    <p>代码：</p>
+    <span>HTML</span>
+    <pre>
+        <code>
+            &lt;input type="radio" ng-value="1" name="danxuan" ng-model="params.radio">单选1
+            &lt;input type="radio" ng-value="2" name="danxuan" ng-model="params.radio">单选2
+            &lt;input type="radio" ng-value="3" name="danxuan" ng-model="params.radio">单选3
+            &lt;div>选中的值为:{{params.radio}}&lt;/div>
+            &lt;button ng-click="radioFn()">获取选中项&lt;/button>
+            &lt;button ng-click="radio3Fn()">设置3选中&lt;/button>
+        </code>
+    </pre>
+    <span>JS</span>
+    <pre>
+        <code>
+            /**
+ * Created by 脚本 on 2019/6/10.
+ */
+monitor.controller('checkboxCtrl', function ($scope, $state, $stateParams, ngDialog , $interval) {
+    $scope.params = {
+        checkbox1:true,
+        checkbox2:true,
+        checkbox3:false,
+        checkbox4:false,
+        radio: "1"
+    }
+
+    $scope.radioFn = function(){
+        alert($scope.params.radio)
+    }
+    $scope.radio3Fn = function(){
+        $scope.params.radio = "3"
+    }
+
+    $scope.checkFn = function () {
+        if($scope.params.checkbox1){
+            alert('单选1')
+        }
+        if($scope.params.checkbox2){
+            alert('单选2')
+        }
+        if($scope.params.checkbox3){
+            alert('单选3')
+        }
+        if($scope.params.checkbox4){
+            alert('单选4')
+        }
+    }
+    $scope.check4Fn = function () {
+        $scope.params.checkbox4 = true;
+    }
+})
+        </code>
+    </pre>
+    <p>多选示例：</p>
+    <input ng-model="params.checkbox1" type="checkbox">多选1 <br>
+    <input ng-model="params.checkbox2" type="checkbox">多选2 <br>
+    <input ng-model="params.checkbox3" type="checkbox">多选3 <br>
     <input ng-model="params.checkbox4" type="checkbox" readonly>单选4 <br>
     <button ng-click="checkFn()">获取选中项</button>
     <button ng-click="check4Fn()">设置4选中</button>

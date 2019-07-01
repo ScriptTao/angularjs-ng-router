@@ -7,7 +7,16 @@ monitor.controller('checkboxCtrl', function ($scope, $state, $stateParams, ngDia
         checkbox2:true,
         checkbox3:false,
         checkbox4:false,
+        radio: "1"
     }
+
+    $scope.radioFn = function(){
+        alert($scope.params.radio)
+    }
+    $scope.radio3Fn = function(){
+        $scope.params.radio = "3"
+    }
+
     $scope.checkFn = function () {
         if($scope.params.checkbox1){
             alert('单选1')
