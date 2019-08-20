@@ -1,27 +1,15 @@
 monitor.controller('userConfigCtrl', function ($scope, $state, $stateParams, ngDialog,createJson,GetHmiData) {
-    GetHmiData.save({
-        msg:[],
-        tags:[{
-            name:"Cut_Info",
-            ts:"0"
-        },
-            {
-                name:"123",
-                ts:"0"
-            }]
-    },function (res) {
-
-    })
     $scope.menu_list = MENU_LIST;
 
     for (var i = 0; i < $scope.menu_list.length; i++) {
+        debugger
         $scope.menu_list[i].choose = false;
         for (var q = 0; q < $scope.menu_list[i].children.length; q++) {
-            $scope.menu_list[q].children[q].choose = false;
+            $scope.menu_list[i].children[q].choose = false;
         }
     }
     $.ajax({
-        url: "../base/user_menu.json",
+        url: "../angularjs-ng-router/user_menu.json",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -131,5 +119,9 @@ monitor.controller('userConfigCtrl', function ($scope, $state, $stateParams, ngD
             console.log(res);
         })
     }
+
+
+
+
 
 })

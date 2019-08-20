@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimumcustomSql-scale=1.0, maximum-scale=1.0"/>
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles/lib/reset.css">
     <link rel="stylesheet" href="styles/lib/table.css">
@@ -16,8 +16,6 @@
     <link rel="stylesheet" type="text/css" href="libs/WdatePicker/skin/WdatePicker.css"/>
     <title>项目名称</title>
 </head>
-
-
 <body ng-controller="mainCtrl">
 <div ui-view style="height: 100%"></div>
 <script src="libs/angular.min.js"></script>
@@ -40,10 +38,9 @@
 <script src="config/config.js"></script>
 <script src="libs/main.js"></script>
 <script>
-    var random = Math.round(Math.random()*10);
-    window.version = '?ver=0.0.'+random+'';
+    // var random = Math.round(Math.random()*10);
+    window.version = '?ver=0.0';
+    // window.version = '?ver=0.0.'+random+'';
 </script>
 </body>
-<script>
-</script>
 </html>

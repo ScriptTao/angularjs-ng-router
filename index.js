@@ -1,7 +1,5 @@
-monitor.controller("mainCtrl", function ($scope, ngDialog, $state, $location, $interval
-    , GetHmiData, SendTag, SendHmiParam) {
+monitor.controller("mainCtrl", function ($scope, ngDialog, $state, $location, $interval, GetHmiData, SendTag, SendHmiParam) {
     $scope.projectName = PROJECTNAME;
-    //
     /*
     * _api  String 接口名称
     * _api_param Object 请求参数
@@ -73,65 +71,106 @@ monitor.controller("mainCtrl", function ($scope, ngDialog, $state, $location, $i
             msgs: [],
             tags: []
         }
+        var carr_ = [];//暂存需要操作的数据name
         $(document).find("[data-tag]").each(function (i, item) {
-            console.log(i, item)
-            sub.tags.push({
-                name: $(item).attr("data-tag"),
-                ts: "0"
-            })
+            if ($(item).attr('data-tag').indexOf('@') != -1) {//需要数据计算
+                sub.tags.push({
+                    name: $(item).attr("data-tag").split('@')[0],
+                    ts: "0"
+                })
+                carr_.push({
+                    name:$(item).attr("data-tag").split('@')[0],
+                    count:$(item).attr("data-tag").split('@')[1]
+                });
+            } else {
+                sub.tags.push({
+                    name: $(item).attr("data-tag"),
+                    ts: "0"
+                })
+            }
         })
-
         GetHmiData.save(sub, function (res) {
-            // console.log(res.data.tagList);
             for (var i = 0; i < res.data.tagList.length; i++) {
-                $("[data-tag=" + res.data.tagList[i].name + "]").val(res.data.tagList[i].value)
+                if(carr_.length != 0){
+                    for(var q = 0; q < carr_.length; q++){
+                        if(res.data.tagList[i].name == carr_[q].name){
+                            switch (carr_[q].count.substring(0,1)) {
+                                case '*':
+                                    $("[data-tag=\'" + res.data.tagList[i].name+'@'+carr_[q].count + "\']").val(Number(res.data.tagList[i].value)*carr_[q].count.split('*')[1])
+                                    break
+                                case '/':
+                                    $("[data-tag=\'" + res.data.tagList[i].name+'@'+carr_[q].count + "\']").val(Number(res.data.tagList[i].value)/carr_[q].count.split('/')[1])
+                                    break
+                                case '+':
+                                    $("[data-tag=\'" + res.data.tagList[i].name+'@'+carr_[q].count + "\']").val(Number(res.data.tagList[i].value)+Number(carr_[q].count.split('+')[1]))
+                                    break
+                                case '-':
+                                    $("[data-tag=\'" + res.data.tagList[i].name+'@'+carr_[q].count + "\']").val(Number(res.data.tagList[i].value)-carr_[q].count.split('-')[1])
+                                    break
+                            }
+                        }else {
+                            $("[data-tag=\'" + res.data.tagList[i].name + "\']").val(res.data.tagList[i].value)
+                        }
+                    }
+                }else {
+                    $("[data-tag=\'" + res.data.tagList[i].name + "\']").val(res.data.tagList[i].value)
+                }
             }
         })
     };
+
+
+    // setTimeout(function () {
+    // if ($("div").length != 0) {
+    // $scope.getDataTag();
+    // }
+    // },500)//关闭双向功能
+
     var timer = $interval(function () {
         if ($("div").length != 0) {
             $scope.getDataTag();
-            // $interval.cancel(timer);//打开定时器
+            // $interval.cancel(timer);
         }
-    }, 5000);
-    $scope.getDataTag();
-    $scope._v = "";
-    /*关闭双向功能*/
-    /*setTimeout(function () {
-        $(document).find("[data-tag]").each(function (i, item) {
-            $(item).on({
-                dblclick: function () {
-                    $(item).removeAttr("readonly");
-                    $scope._v = $(item).val();
-                },
-                blur: function () {
-                    if ($scope._v == $(item).val()) {
-                        $(item).attr({"readonly": "readonly"});
-                        return
-                    }
-                    if (!confirm("确定将变量" + $(item).attr('data-tag') + "修改为" + $(item).val() + "吗?")) {
-                        return
-                    }
-                    var mod = {
-                        tagList: [{
-                            name: $(item).attr('data-tag'),
-                            value: $(item).val()
-                        }]
-                    }
-                    SendTag.save(mod, function (res) {
-                        if (res.data != undefined && res.code == 0) {
-                            $(item).attr({"readonly": "readonly"});
-                        }
-                    })
-                }
-            })
-        })
-    }, 1000);*/
+    }, 2000);
+
+
+    /* $scope._v = "";
+     setTimeout(function () {
+         $(document).find("[data-tag]").each(function (i, item) {
+             $(item).on({
+                 dblclick: function () {
+                     $(item).removeAttr("readonly");
+                     $scope._v = $(item).val();
+                 },
+                 blur: function () {
+                     if ($scope._v == $(item).val()) {
+                         $(item).attr({"readonly": "readonly"});
+                         return
+                     }
+                     if (!confirm("确定将变量" + $(item).attr('data-tag') + "修改为" + $(item).val() + "吗?")) {
+                         return
+                     }
+                     var mod = {
+                         tagList: [{
+                             name: $(item).attr('data-tag'),
+                             value: $(item).val()
+                         }]
+                     }
+                     SendTag.save(mod, function (res) {
+                         if (res.data != undefined && res.code == 0) {
+                             $(item).attr({"readonly": "readonly"});
+                         }
+                     })
+                 }
+             })
+         })
+     }, 1000);*/
 
 
     $scope.setTime = 3000;
     window.TagCenter = {};
     var tag = [];
+
     function TagCenterFn(a) {
         var saveb = "";//处理ts的时间
         sf();

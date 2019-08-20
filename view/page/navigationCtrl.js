@@ -4,11 +4,8 @@
  */
 monitor.controller('navigationCtrl', function ($scope, $state, $stateParams, ngDialog
     , $interval, $timeout,locals) {
-
     $scope.navListOne = JSON.parse(locals.get('userInfo')).menu;
     $scope.userName = JSON.parse(locals.get('userInfo')).name;
-
-
     $interval(function () {
         $scope.nowdate = new Date();
     }, 1000);

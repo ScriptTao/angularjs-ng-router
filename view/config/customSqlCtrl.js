@@ -2,9 +2,12 @@
  * Created by 脚本 on 2019/2/25.
  */
 monitor.controller('customSqlCtrl', function ($scope, $state, $stateParams, ngDialog, $interval
-    , CustomFindByPage, CustomDeleteOne, CustomInsert, CustomUpdate, CustomFindByIndocno, commonFindData,GetHmiParam) {
+    , CustomFindByPage, CustomDeleteOne, CustomInsert, CustomUpdate, CustomFindByIndocno
+    , commonFindData, commonFindBlob, GetHmiParam, SendMessage) {
+
+    $scope.arr = [1,2,12,31,23,123]
     /**/
-    GetHmiParam.save({
+    /*GetHmiParam.save({
         tag_list: "Cut_Info,asd213"
     },function (res) {
         console.log(res);
@@ -25,7 +28,72 @@ monitor.controller('customSqlCtrl', function ($scope, $state, $stateParams, ngDi
         ]
     }, function (res) {
         console.log(res)
+    })*/
+
+    SendMessage.save({
+        "msgList": [
+            {
+                "id": "msg",
+                "timeout": 3,
+                "reply": true,
+                "data": [{"x": "1", "y": "2"}, {"x": "3", "y": "4"}]
+            }
+        ]
+    }, function (res) {
+        console.log(res);
     })
+    // var acc = 'indocno'
+    commonFindData.save({
+        key: "testVersion",
+        list: [
+            {
+                '@sname': "\'tsw\'"
+            }
+        ]
+    }, function (res) {
+        console.log(res)
+    })
+    //
+    commonFindData.save({
+        key: "testss",
+        list: [
+            {
+                'coil_no': "H1904181236"
+            }
+        ]
+    }, function (res) {
+        console.log(res)
+    })
+
+
+    commonFindBlob.save({
+        key: "testBlob",
+        list: [
+            {
+                '@id': "\'123\'"
+            }
+        ]
+    }, function (res) {
+        console.log(res);
+    })
+    /*var data = {
+        key:"testBlob",
+        list:[
+            {
+                '@id':"\'123\'"
+            }
+        ]
+    }
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8087/service_bkgy/common/findBlob',
+        data: data,
+        success: function (res) {
+            console.log(res);
+        },
+    });*/
+
+
     $scope.params = {
         queryObj: {
             control_key: "",

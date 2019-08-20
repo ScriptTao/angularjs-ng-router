@@ -1,45 +1,54 @@
-
-monitor.factory('httpInterceptor', ["$q", "$injector", function($q) {
-        return {
-            request: function(config) {
-                config.headers = config.headers || {};
-                return config
-            },
-            requestError: function(err) {
-                // console.log('requestError')
-            },
-            response: function(res) {
-               // console.log('responseSuccess')
-                return res;
-            },
-            responseError: function(err) {
-                // console.log('responseError')
+monitor.factory('httpInterceptor', ["$q", "$injector", function ($q) {
+    return {
+        request: function (config) {
+            // config.headers = config.headers || {};
+            //config.headers['Content-Type'] = "application/x-www-form-urlencoded; charset=UTF-8"
+            config.headers = {
+                'Content-Type':'application/x-www-form-urlencoded'
             }
-        };
+            return config
+        },
+        requestError: function (err) {
+            console.log(err)
+        },
+        response: function (res) {
+            // console.log('responseSuccess')
+            return res;
+        },
+        responseError: function (err) {
+            console.log(err)
+        }
+    };
+}])
+
+
+    //test
+    .factory('hahhaha', ['$resource', function ($resource) {
+        return $resource('http://localhost/hmiDataGate/HmiDataGate.asmx/GetHmiData')
     }])
-    //pcdp
-    /*发送本项目所需要的变量*/
-    .factory('SendHmiParam', ['$resource', function($resource) {
+//pcdp
+/*发送本项目所需要的变量*/
+    .factory('SendHmiParam', ['$resource', function ($resource) {
         return $resource(IP + 'webservice/createHash')
     }])
-    .factory('GetHmiParam', ['$resource', function($resource) {
+    .factory('GetHmiParam', ['$resource', function ($resource) {
         return $resource(IP + 'webservice/getHashByParam')
     }])
 
 
-    .factory('GetHmiData', ['$resource', function($resource) {
+    .factory('GetHmiData', ['$resource', function ($resource) {
         return $resource(IP + 'webservice/getHmiData')
     }])
-    .factory('GetLogData', ['$resource', function($resource) {
+    .factory('GetLogData', ['$resource', function ($resource) {
         return $resource(IP + 'webservice/getLogData')
     }])
-    .factory('SendTag', ['$resource', function($resource) {
+    .factory('SendTag', ['$resource', function ($resource) {
         return $resource(IP + 'webservice/sendTag')
     }])
-    .factory('SendMessage', ['$resource', function($resource) {
+    .factory('SendMessage', ['$resource', function ($resource) {
         return $resource(IP + 'webservice/sendMessage')
     }])
-    .factory('GetLogData', ['$resource', function($resource) {
+    .factory('GetLogData', ['$resource', function ($resource) {
         return $resource(IP + 'webservice/getLogData')
     }])
 
@@ -63,32 +72,39 @@ monitor.factory('httpInterceptor', ["$q", "$injector", function($q) {
     }])
     //自定义接口
     //查询
-    .factory('CustomFindByPage', ['$resource', function($resource) {
+    .factory('CustomFindByPage', ['$resource', function ($resource) {
         return $resource(IP + 'controlInterface/findByPage')
     }])
     //添加
-    .factory('CustomInsert', ['$resource', function($resource) {
+    .factory('CustomInsert', ['$resource', function ($resource) {
         return $resource(IP + 'controlInterface/insert')
     }])
     //查询单条
-    .factory('CustomFindByIndocno', ['$resource', function($resource) {
+    .factory('CustomFindByIndocno', ['$resource', function ($resource) {
         return $resource(IP + 'controlInterface/findByIndocno')
     }])
 
     //修改
-    .factory('CustomUpdate', ['$resource', function($resource) {
+    .factory('CustomUpdate', ['$resource', function ($resource) {
         return $resource(IP + 'controlInterface/update')
     }])
     //删除
-    .factory('CustomDeleteOne', ['$resource', function($resource) {
+    .factory('CustomDeleteOne', ['$resource', function ($resource) {
         return $resource(IP + 'controlInterface/deleteOne')
     }])
     //自定义sql查询
-    .factory('commonFindData', ['$resource', function($resource) {
+    .factory('commonFindData', ['$resource', function ($resource) {
         return $resource(IP + 'common/findData')
     }])
+    //自定义sql(blob)查询
+    .factory('commonFindBlob', ['$resource', function ($resource) {
+        return $resource(IP + 'common/findBlob')
+    }])
+    .factory('commonFindBlobNo', ['$resource', function ($resource) {
+        return $resource(IP + 'common/findBlobNo')
+    }])
     //http://localhost:8089/json/createJson
-    .factory('createJson', ['$resource', function($resource) {
+    .factory('createJson', ['$resource', function ($resource) {
         return $resource(IP + 'json/createJson')
     }])
 

@@ -1,7 +1,7 @@
 var monitor = angular.module('app', ['ui.router', 'oc.lazyLoad', 'ngDialog', 'ngResource', 'ngSanitize']);
 
 monitor.config(["$provide", "$compileProvider", "$controllerProvider", "$filterProvider",
-    function($provide, $compileProvider, $controllerProvider, $filterProvider) {
+    function ($provide, $compileProvider, $controllerProvider, $filterProvider) {
         monitor.controller = $controllerProvider.register;
         monitor.directive = $compileProvider.directive;
         monitor.filter = $filterProvider.register;
@@ -10,14 +10,14 @@ monitor.config(["$provide", "$compileProvider", "$controllerProvider", "$filterP
         monitor.constant = $provide.constant;
     }
 ]);
-monitor.run(['$rootScope', 'ngDialog', function($rootScope, ngDialog) {
-    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
+monitor.run(['$rootScope', 'ngDialog', function ($rootScope, ngDialog) {
+    $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
         document.title = toState.title;
         ngDialog.closeAll();
         $rootScope.nothing = false;
     });
 }]);
-monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
+monitor.config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
     const root = 'view/';
     $stateProvider
         .state('monitor-web', {
@@ -319,6 +319,7 @@ monitor.config(function($httpProvider, $stateProvider, $urlRouterProvider) {
                 }]
             }
         })
+
         .state('monitor-web.db', {
             url: '/db',
             templateUrl: root + 'demo/db/db.html' + version,
