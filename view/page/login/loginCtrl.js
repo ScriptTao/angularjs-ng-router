@@ -47,7 +47,7 @@ monitor.controller('loginCtrl', function ($scope, $state, $stateParams, ngDialog
                         }, function (res) {
                             console.log(res)
                         })
-                        $state.go("monitor-web.slipOverview")
+                        $state.go("monitor-web.main")
                         break
                     }
                     else if(data[i].account == $scope.param.userName ){
