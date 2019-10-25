@@ -1,5 +1,6 @@
 monitor.controller("mainCtrl", function ($scope, ngDialog, $state, $location, $interval, GetHmiData, SendTag, SendHmiParam) {
     $scope.projectName = PROJECTNAME;
+    window.load_ = new loading()
     /*
     * _api  String 接口名称
     * _api_param Object 请求参数

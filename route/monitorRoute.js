@@ -337,6 +337,40 @@ monitor.config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
                 }]
             }
         })
+        .state('monitor-web.csp', {
+            url: '/csp',
+            templateUrl: root + 'demo/csp/csp.html' + version,
+            controller: 'cspCtrl',
+            title: "csp",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "csp",
+                        files: [
+                            root + "demo/csp/cspCtrl.js" + version,
+                            root + "demo/csp/csp.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
+        .state('monitor-web.loading', {
+            url: '/loading',
+            templateUrl: root + 'demo/loading/loading.html' + version,
+            controller: 'loadingCtrl',
+            title: "loading",
+            resolve: {
+                loadMyCtrl: ['$ocLazyLoad', function ($ocLazyLoad) {
+                    return $ocLazyLoad.load({
+                        name: "loading",
+                        files: [
+                            root + "demo/loading/loadingCtrl.js" + version,
+                            root + "demo/loading/loading.css" + version,
+                        ]
+                    })
+                }]
+            }
+        })
     ;
     $urlRouterProvider.otherwise('/login');
     $httpProvider.interceptors.push('httpInterceptor');

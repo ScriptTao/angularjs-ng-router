@@ -1,11 +1,11 @@
 monitor.factory('httpInterceptor', ["$q", "$injector", function ($q) {
     return {
         request: function (config) {
-            // config.headers = config.headers || {};
+            config.headers = config.headers || {};
             //config.headers['Content-Type'] = "application/x-www-form-urlencoded; charset=UTF-8"
-            config.headers = {
+            /*config.headers = {
                 'Content-Type':'application/x-www-form-urlencoded'
-            }
+            }*/
             return config
         },
         requestError: function (err) {

@@ -1,7 +1,7 @@
 // const IP = 'http://localhost:8087/service_bkgy/';
 // const IP = 'http://192.168.8.127:8087/service_bkgy/';
 // const IP = 'http://172.20.10.4:8089/';
-const IP = 'http://127.0.0.1:8087/service_bkgy/';
+const IP = 'http://172.31.50.3:8080/service_bkgy/';
 
 
 const MENU_LIST = [

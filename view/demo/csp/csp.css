@@ -1,0 +1,562 @@
+.csp {
+    width: 1683px;
+    height: 340px;
+}
+
+.csp .animation {
+    overflow: hidden;
+    position: relative;
+}
+
+.csp .animation > div {
+    float: left;
+    height: 310px;
+    width: 206px;
+    /*border: 1px solid pink;*/
+    margin-right: 8px;
+}
+
+.csp .animation .roll_one {
+    position: relative;
+    /*width: 260px;*/
+    width: 350px;
+    background: url("../../../images/s1.png") no-repeat;
+    background-size: 98% 100%;
+}
+
+.csp .animation .roll_two {
+    position: relative;
+    /*width: 150px;*/
+    background: url("../../../images/roll.png") no-repeat;
+    background-size: 98% 100%;
+}
+
+.csp .animation .roll_three {
+    position: relative;
+    /*width: 150px;*/
+    background: url("../../../images/roll.png") no-repeat;
+    background-size: 98% 100%;
+}
+
+.csp .animation .roll_four {
+    position: relative;
+    /*width: 150px;*/
+    background: url("../../../images/roll.png") no-repeat;
+    background-size: 98% 100%;
+}
+
+.csp .animation .roll_five {
+    position: relative;
+    /*width: 150px;*/
+    background: url("../../../images/roll.png") no-repeat;
+    background-size: 98% 100%;
+}
+
+.csp .animation .roll_six {
+    position: relative;
+    /*width: 150px;*/
+    background: url("../../../images/roll.png") no-repeat;
+    background-size: 98% 100%;
+}
+
+.csp .animation .roll_seven {
+    position: relative;
+    /*width: 150px;*/
+    background: url("../../../images/roll.png") no-repeat;
+    background-size: 98% 100%;
+}
+
+.csp .animation .steel {
+    position: absolute;
+    /*width: 24%;*/
+    height: 7px;
+    background: darkred;
+    top: 192px;
+}
+.csp .animation .steel_1 {
+    position: absolute;
+    /*width: 24%;*/
+    height: 7px;
+    /*background: #cccccc;*/
+    background: #ffffff;
+    top: 192px;
+}
+
+.csp .s1_top_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 82px;
+    left: 172px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.csp .s1_top_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 149px;
+    left: 187px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s1_bottom_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 199px;
+    left: 186px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s1_bottom_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 241px;
+    left: 172px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*----------------------*/
+.csp .s2_top_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 82px;
+    left: 29px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s2_top_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 149px;
+    left: 43px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s2_bottom_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 199px;
+    left: 42px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s2_bottom_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 241px;
+    left: 29px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+/*-----------------------------------*/
+.csp .s3_top_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 82px;
+    left: 29px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s3_top_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 149px;
+    left: 43px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s3_bottom_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 199px;
+    left: 42px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s3_bottom_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 241px;
+    left: 29px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+/*-----------------------------------*/
+.csp .s4_top_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 82px;
+    left: 29px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s4_top_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 149px;
+    left: 43px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s4_bottom_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 199px;
+    left: 42px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s4_bottom_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 241px;
+    left: 29px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+/*-----------------------------------*/
+.csp .s5_top_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 82px;
+    left: 29px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s5_top_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 149px;
+    left: 43px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s5_bottom_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 199px;
+    left: 42px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s5_bottom_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 241px;
+    left: 29px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+/*-----------------------------------*/
+.csp .s6_top_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 82px;
+    left: 29px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s6_top_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 149px;
+    left: 43px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s6_bottom_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 199px;
+    left: 42px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s6_bottom_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 241px;
+    left: 29px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+/*-----------------------------------*/
+.csp .s7_top_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 82px;
+    left: 29px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s7_top_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 149px;
+    left: 43px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s7_bottom_small {
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    top: 199px;
+    left: 42px;
+    background: url("../../../images/circle_small.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s7_bottom_big {
+    width: 68px;
+    height: 68px;
+    position: absolute;
+    top: 241px;
+    left: 29px;
+    background: url("../../../images/circle_big.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.csp .s1_rotate_ding {
+    background: url(../../../images/rotate.png) no-repeat;
+    background-size: 100% 100%;
+    width: 85px;
+    height: 20px;
+    position: absolute;
+    top: 216px;
+    right: -4px;
+    /*animation: rotate_ding 2s;*/
+
+
+}
+
+
+
+.csp .s2_rotate_ding, .s3_rotate_ding, .s4_rotate_ding, .s5_rotate_ding, .s6_rotate_ding, .s7_rotate_ding {
+    background: url(../../../images/rotate.png) no-repeat;
+    background-size: 100% 100%;
+    width: 85px;
+    height: 20px;
+    position: absolute;
+    top: 216px;
+    right: -6px;
+}
+
+.csp .s1_fugai {
+    position: absolute;
+    top: 216px;
+    right: 52px;
+    width: 30px;
+    height: 90px;
+    background-color: #A9D18E;
+}
+
+.csp .s2_fugai, .s3_fugai, .s4_fugai, .s5_fugai, .s6_fugai, .s7_fugai {
+    position: absolute;
+    top: 216px;
+    right: 50px;
+    width: 30px;
+    height: 90px;
+    background-color: #A9D18E;
+}
+
+.s1_top_big , .s2_top_big , .s3_top_big , .s4_top_big , .s5_top_big , .s6_top_big , .s7_top_big {
+    animation: annimation_rotate_1 4s linear infinite;
+}
+.s1_bottom_big , .s2_bottom_big , .s3_bottom_big , .s4_bottom_big , .s5_bottom_big , .s6_bottom_big , .s7_bottom_big{
+    animation: annimation_rotate_2 4s linear infinite;
+}
+
+
+.csp .s1_top_small , .s2_top_small , .s3_top_small , .s4_top_small , .s5_top_small , .s6_top_small , .s7_top_small{
+    animation: annimation_rotate_2 2s linear infinite;
+}
+
+.csp .s1_bottom_small , .s2_bottom_small , .s3_bottom_small , .s4_bottom_small , .s5_bottom_small , .s6_bottom_small , .s7_bottom_small{
+    animation: annimation_rotate_1 2s linear infinite;
+}
+
+
+@-webkit-keyframes annimation_rotate_1 {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    25% {
+        -webkit-transform: rotate(90deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+
+    75% {
+        -webkit-transform: rotate(270deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes annimation_rotate_2 {
+    0% {
+        -webkit-transform: rotate(360deg);
+    }
+
+    25% {
+
+        -webkit-transform: rotate(270deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+
+    75% {
+        -webkit-transform: rotate(90deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+
+.s1_yuanzhu{
+    position: absolute;
+    top: 45px;
+    left: 130px;
+    width: 20px;
+    height: 137px;
+    /* border: 1px solid red; */
+    background: url(../../../images/yuanzhu.gif) no-repeat;
+    background-size: 100% 100%;
+}
+
+@-webkit-keyframes rotate_ding {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(-30deg);
+    }
+}
+@-webkit-keyframes rotate_ding_1 {
+    from{
+        -webkit-transform: rotate(-30deg);
+    }
+    to {
+        -webkit-transform: rotate(0deg);
+    }
+}
+.diog_open{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #000000;
+    /*width: 140px;*/
+    /*height: 100px;*/
+    /*line-height: 100px;*/
+    opacity: 0.7;
+    text-align: left;
+    color: #ffffff;
+    display: none;
+    padding: 10px 15px;
+}
+.diog_open .c_{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.diog_open .fr{
+    background-color: darkred;
+}
+.diog_open .gap{
+    background-color: green;
+}
+.diog_open .looper{
+    background-color: deeppink;
+}
+.body_box .echart_box{
+    overflow: hidden;
+}
+.body_box .echart_item{
+    width: 25%;
+    height: 360px;
+    border: 1px solid deeppink;
+    float: left;
+}
+
+.body_box .information_box{
+    height: 140px;
+}
+.enter_temper{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 1px solid deeppink;
+    padding: 3px 5px;
+}
+.out_temper{
+    position: absolute;
+    top: 0px;
+    right: -5px;
+    border: 1px solid deeppink;
+    padding: 3px 5px;
+}
